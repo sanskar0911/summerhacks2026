@@ -1,19 +1,19 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
-  ArrowRight,
+  ArrowUpRight,
+  CircleAlert,
+  CircleCheckBig,
+  Clock3,
+  FolderKanban,
+  Hand,
+  ReceiptText,
+  Search,
   Sparkles,
-  Briefcase,
-  Radar,
-  MessageSquare,
-  TrendingUp,
-  AlertTriangle,
   DollarSign,
   Users,
-  Zap,
-  Activity,
+  WandSparkles,
+  Send,
 } from "lucide-react";
-import { BrainOrb } from "../components/BrainOrb";
-import { TypingDots } from "../components/TypingDots";
 import { useAuth } from "../lib/auth";
 
 export const Route = createFileRoute("/")({
@@ -30,194 +30,218 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
 });
 
-const agents = [
-  {
-    name: "Ops Agent",
-    desc: "Generates proposals, manages invoices and parses contracts.",
-    icon: Briefcase,
-    gradient: "bg-gradient-primary",
-    action: "Run Ops",
-  },
-  {
-    name: "Lead Scout",
-    desc: "Discovers opportunities and matches you with qualified clients.",
-    icon: Sparkles,
-    gradient: "bg-gradient-cool",
-    action: "Find Leads",
-  },
-  {
-    name: "Trend Radar",
-    desc: "Detects market shifts and surfaces niche opportunities early.",
-    icon: Radar,
-    gradient: "bg-gradient-warm",
-    action: "Scan Market",
-  },
-  {
-    name: "Comms Agent",
-    desc: "Drafts emails, suggests follow-ups, and tunes your tone.",
-    icon: MessageSquare,
-    gradient: "bg-gradient-primary",
-    action: "Open Inbox",
-  },
+const dashboardStats = [
+  { label: "Revenue MTD", value: "1.45L", trend: "+22.6%", icon: DollarSign, tone: "text-success" },
+  { label: "Pipeline", value: "5.2L", trend: "+18.4%", icon: Sparkles, tone: "text-success" },
+  { label: "Active Clients", value: "24", trend: "+4.8%", icon: Users, tone: "text-success" },
+  { label: "Pending Actions", value: "8", trend: "-37% done", icon: Clock3, tone: "text-warning" },
 ];
 
-const stats = [
-  { label: "Revenue this month", value: "$18,420", delta: "+24%", icon: DollarSign },
-  { label: "Active clients", value: "7", delta: "+2", icon: Users },
-  { label: "Pending actions", value: "4", delta: "now", icon: Zap },
-  { label: "Opportunities", value: "12", delta: "fresh", icon: Activity },
+const invoices = [
+  { company: "TechCorp India", amount: "₹48,000", status: "Paid" },
+  { company: "Nextsoft", amount: "₹32,500", status: "Due" },
+  { company: "StartupPad", amount: "₹65,000", status: "Draft" },
+  { company: "DailySync", amount: "₹22,000", status: "Paid" },
+];
+
+const projectTracker = [
+  { name: "TechCorp API v2", status: "On Track", progress: 92 },
+  { name: "Nextsoft UI/UX - Dashboard", status: "In Review", progress: 68 },
+  { name: "StartupPad - App MVP", status: "At Risk", progress: 41 },
 ];
 
 const alerts = [
-  {
-    tone: "warning",
-    title: "No leads scheduled for next week",
-    body: "Lead Scout suggests outreach to 3 startups hiring React developers.",
-  },
-  {
-    tone: "danger",
-    title: "Client may churn — Northwind Co.",
-    body: "Engagement dropped 60% over the last 14 days. Send check-in?",
-  },
-  {
-    tone: "info",
-    title: "You appear to be underpricing",
-    body: "Market rate for your stack is 18% higher than your average invoice.",
-  },
+  { title: "StartupPad overdue 7d", body: "Client payment not sent.", tone: "danger" },
+  { title: "TechCorp lead #A2X accepted", body: "Prep proposal deck.", tone: "ok" },
+  { title: "3 hot leads found", body: "Prioritize outreach in 24h.", tone: "ok" },
 ];
 
 function Dashboard() {
   const { user } = useAuth();
   const profile = user?.profile;
-
-  const freelancerStats = [
-    { label: "Onboarding Status", value: user?.isOnboarded ? "Verified" : "Pending", delta: "active", icon: Zap },
-    { label: "Availability", value: `${profile?.availability || 0}h/wk`, delta: profile?.jobType || "Freelance", icon: Activity },
-    { label: "Base Rate", value: `$${profile?.expectedSalary || 0}`, delta: "per month", icon: DollarSign },
-    { label: "Exp. Level", value: profile?.experienceLevel || "N/A", delta: `${profile?.yearsOfExperience || 0} years`, icon: Briefcase },
-  ];
+  const firstName = user?.name?.split(" ")[0] || "there";
 
   return (
-    <div className="space-y-10">
-      {/* Profile Header */}
-      <section className="relative overflow-hidden rounded-3xl glass-strong p-6 md:p-10">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gradient-brain opacity-30 blur-3xl"
-        />
-        
-        <div className="relative flex flex-col lg:flex-row lg:items-center gap-8">
-          <div className="shrink-0 flex lg:flex-col items-center lg:items-start gap-4">
-            <div className="h-24 w-24 rounded-3xl bg-gradient-primary flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-glow-primary">
-              {user?.name?.[0]}
-            </div>
+    <div className="space-y-8">
+      <section className="glass-strong rounded-3xl p-6 lg:p-7">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="text-base text-muted-foreground">Good morning, {firstName}</p>
+            <h1 className="mt-1 text-3xl lg:text-4xl font-semibold tracking-tight">Control dashboard</h1>
           </div>
-
-          <div className="flex-1 min-w-0">
-            <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              <Sparkles className="h-3 w-3 text-primary" />
-              Freelancer Identity
-            </div>
-            <h2 className="mt-3 text-2xl md:text-4xl font-semibold tracking-tight leading-tight">
-              Welcome, <span className="text-gradient-primary">{user?.name}</span>
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground max-w-2xl">
-              {profile?.bio || "You haven't added a bio yet. Update your profile to stand out to clients."}
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              {profile?.skills?.map((skill: string) => (
-                <span key={skill} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs font-medium">
-                  {skill}
-                </span>
-              ))}
-            </div>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-primary">
+            <Sparkles className="h-4 w-4" />
+            <span>3 agents active</span>
           </div>
         </div>
       </section>
 
-      {/* Stats Summary */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {freelancerStats.map((s) => {
-          const Icon = s.icon;
+      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {dashboardStats.map((metric) => {
+          const Icon = metric.icon;
           return (
-            <div
-              key={s.label}
-              className="glass rounded-2xl p-4 md:p-5 hover:bg-white/[0.07] transition-colors"
-            >
+            <article key={metric.label} className="glass rounded-2xl p-5">
               <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">{s.label}</span>
-                <Icon className="h-3.5 w-3.5 text-muted-foreground" />
+                <p className="text-sm text-muted-foreground">{metric.label}</p>
+                <Icon className="h-4 w-4 text-muted-foreground" />
               </div>
-              <div className="mt-3 flex items-baseline gap-2">
-                <div className="text-xl md:text-2xl font-semibold tracking-tight">
-                  {s.value}
-                </div>
-                <div className="text-[10px] text-primary font-medium">{s.delta}</div>
-              </div>
-            </div>
+              <p className="mt-2 text-3xl font-semibold tracking-tight">{metric.value}</p>
+              <p className={`mt-1 text-sm font-medium ${metric.tone}`}>{metric.trend}</p>
+            </article>
           );
         })}
       </section>
 
-      {/* Placeholder Job Matching */}
-      <section className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Recommended Jobs</div>
-            <button className="text-xs text-primary font-medium hover:underline">View All</button>
-          </div>
-          
-          {[
-            { title: "Senior React Architect", company: "MetaScale", rate: "$120/hr", tags: ["React", "TypeScript"] },
-            { title: "AI Integration Lead", company: "CyberNexus", rate: "$150/hr", tags: ["Python", "OpenAI"] },
-            { title: "Product Designer", company: "Vivid UI", rate: "$90/hr", tags: ["Figma", "UI/UX"] },
-          ].map((job, i) => (
-            <div key={i} className="glass rounded-2xl p-5 group flex items-start gap-4 hover:bg-white/10 transition-all cursor-pointer">
-              <div className="h-12 w-12 rounded-xl bg-white/5 flex items-center justify-center text-lg font-bold">
-                {job.company[0]}
+      <section className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-5">
+          <article className="glass-strong rounded-2xl p-6">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.16em] text-primary">AI Recommended</p>
+                <h2 className="mt-2 text-2xl font-semibold">Reach out to 3 high-value leads in your pipeline</h2>
+                <p className="mt-2 text-base text-muted-foreground">
+                  Lead Scout detected stronger buying signals across 3 accounts this week.
+                </p>
               </div>
-              <div className="flex-1">
-                <h4 className="font-semibold">{job.title}</h4>
-                <div className="text-xs text-muted-foreground mt-1">{job.company} • {job.rate}</div>
-                <div className="flex gap-2 mt-3">
-                  {job.tags.map(t => (
-                    <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-muted-foreground">{t}</span>
-                  ))}
-                </div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors self-center" />
+              <WandSparkles className="mt-1 h-6 w-6 text-primary" />
             </div>
-          ))}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-4 py-2.5 text-sm font-medium text-primary-foreground">
+                Execute Action
+                <Send className="h-4 w-4" />
+              </button>
+              <button className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium">
+                View Details
+              </button>
+            </div>
+          </article>
+
+          <article className="glass rounded-2xl p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold">Recent invoices</h3>
+              <button className="text-sm text-primary">See all</button>
+            </div>
+            <div className="mt-5 space-y-3">
+              {invoices.map((invoice) => (
+                <div
+                  key={invoice.company}
+                  className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate text-base font-medium">{invoice.company}</p>
+                    <p className="text-sm text-muted-foreground">{invoice.status}</p>
+                  </div>
+                  <p className="text-base font-semibold">{invoice.amount}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
 
-        <div className="glass rounded-2xl p-6 h-fit sticky top-24">
-          <h3 className="font-semibold text-lg flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-primary" />
-            AI Readiness
-          </h3>
-          <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-            Your profile is {(user?.isOnboarded ? 100 : 0)}% complete. 
-            AI optimization is analyzing your bio to suggest better skill keywords.
-          </p>
-          <div className="mt-6 space-y-4">
-            <div className="space-y-1.5">
-              <div className="flex justify-between text-[11px] font-medium">
-                <span>Verification</span>
-                <span>{user?.isOnboarded ? "100%" : "0%"}</span>
-              </div>
-              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-gradient-primary rounded-full transition-all duration-1000"
-                  style={{ width: user?.isOnboarded ? "100%" : "0%" }}
-                />
-              </div>
+        <div className="space-y-5">
+          <article className="glass rounded-2xl p-5">
+            <h3 className="flex items-center gap-2 text-lg font-semibold">
+              <Sparkles className="h-4 w-4 text-primary" />
+              Agents
+            </h3>
+            <div className="mt-4 space-y-3">
+              {["Ops Agent", "Lead Scout", "Trend Radar", "Comms Agent"].map((agent, idx) => (
+                <div key={agent} className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2.5">
+                  <p className="text-sm">{agent}</p>
+                  <span className={`text-xs ${idx === 1 ? "text-warning" : "text-success"}`}>
+                    {idx === 1 ? "Warming" : "Active"}
+                  </span>
+                </div>
+              ))}
             </div>
-            <button className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-medium transition-colors border border-white/5">
-              Edit Professional Profile
-            </button>
-          </div>
+          </article>
+
+          <article className="glass rounded-2xl p-5">
+            <h3 className="text-lg font-semibold">Quick actions</h3>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <button className="rounded-xl bg-white/5 px-3 py-3 text-sm hover:bg-white/10">New Invoice</button>
+              <button className="rounded-xl bg-white/5 px-3 py-3 text-sm hover:bg-white/10">Proposal</button>
+              <button className="rounded-xl bg-white/5 px-3 py-3 text-sm hover:bg-white/10">Schedule</button>
+              <button className="rounded-xl bg-white/5 px-3 py-3 text-sm hover:bg-white/10">Run Agent</button>
+            </div>
+          </article>
+
+          <article className="glass rounded-2xl p-5">
+            <h3 className="text-lg font-semibold">Alerts</h3>
+            <div className="mt-4 space-y-3">
+              {alerts.map((alert) => (
+                <div key={alert.title} className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
+                  <div className="flex items-center gap-2">
+                    {alert.tone === "danger" ? (
+                      <CircleAlert className="h-4 w-4 text-warning" />
+                    ) : (
+                      <CircleCheckBig className="h-4 w-4 text-success" />
+                    )}
+                    <p className="text-sm font-medium">{alert.title}</p>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{alert.body}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
+      </section>
+
+      <section className="grid grid-cols-1 gap-5 xl:grid-cols-3">
+        <article className="glass xl:col-span-2 rounded-2xl p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold">Project tracker</h3>
+            <FolderKanban className="h-5 w-5 text-muted-foreground" />
+          </div>
+          <div className="mt-5 space-y-4">
+            {projectTracker.map((project) => (
+              <div key={project.name}>
+                <div className="mb-2 flex items-center justify-between gap-2">
+                  <p className="text-base font-medium">{project.name}</p>
+                  <p className="text-sm text-muted-foreground">{project.status}</p>
+                </div>
+                <div className="h-2 w-full overflow-hidden rounded-full bg-white/5">
+                  <div
+                    className="h-full rounded-full bg-gradient-primary transition-all"
+                    style={{ width: `${project.progress}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="glass rounded-2xl p-6">
+          <h3 className="text-xl font-semibold">Your profile</h3>
+          <p className="mt-3 text-base text-muted-foreground">
+            {profile?.bio || "Add a short bio to improve client match quality and proposal acceptance."}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {profile?.skills?.slice(0, 6).map((skill: string) => (
+              <span key={skill} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm">
+                {skill}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-col gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Hand className="h-4 w-4" />
+              {user?.isOnboarded ? "Onboarding complete" : "Onboarding pending"}
+            </div>
+            <div className="flex items-center gap-2">
+              <ReceiptText className="h-4 w-4" />
+              Base rate: ${profile?.expectedSalary || 0}
+            </div>
+            <div className="flex items-center gap-2">
+              <Search className="h-4 w-4" />
+              Availability: {profile?.availability || 0}h/wk
+            </div>
+          </div>
+          <button className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2.5 text-sm hover:bg-white/10">
+            Edit profile
+            <ArrowUpRight className="h-4 w-4" />
+          </button>
+        </article>
       </section>
     </div>
   );
