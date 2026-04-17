@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { BrainOrb } from "../components/BrainOrb";
 import { TypingDots } from "../components/TypingDots";
+import { useAuth } from "../lib/auth";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -86,74 +87,58 @@ const alerts = [
 ];
 
 function Dashboard() {
+  const { user } = useAuth();
+  const profile = user?.profile;
+
+  const freelancerStats = [
+    { label: "Onboarding Status", value: user?.isOnboarded ? "Verified" : "Pending", delta: "active", icon: Zap },
+    { label: "Availability", value: `${profile?.availability || 0}h/wk`, delta: profile?.jobType || "Freelance", icon: Activity },
+    { label: "Base Rate", value: `$${profile?.expectedSalary || 0}`, delta: "per month", icon: DollarSign },
+    { label: "Exp. Level", value: profile?.experienceLevel || "N/A", delta: `${profile?.yearsOfExperience || 0} years`, icon: Briefcase },
+  ];
+
   return (
     <div className="space-y-10">
-      {/* Hero — Next Action */}
+      {/* Profile Header */}
       <section className="relative overflow-hidden rounded-3xl glass-strong p-6 md:p-10">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gradient-brain opacity-30 blur-3xl"
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-gradient-cool opacity-20 blur-3xl"
-        />
-
+        
         <div className="relative flex flex-col lg:flex-row lg:items-center gap-8">
           <div className="shrink-0 flex lg:flex-col items-center lg:items-start gap-4">
-            <BrainOrb size={88} />
-            <div className="text-xs text-muted-foreground inline-flex items-center gap-2">
-              <TypingDots className="text-primary" />
-              <span className="shimmer-text">AgentOS thinking</span>
+            <div className="h-24 w-24 rounded-3xl bg-gradient-primary flex items-center justify-center text-3xl font-bold text-primary-foreground shadow-glow-primary">
+              {user?.name?.[0]}
             </div>
           </div>
 
           <div className="flex-1 min-w-0">
             <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <Sparkles className="h-3 w-3 text-primary" />
-              Next Action
+              Freelancer Identity
             </div>
             <h2 className="mt-3 text-2xl md:text-4xl font-semibold tracking-tight leading-tight">
-              Send a proposal to a startup hiring{" "}
-              <span className="text-gradient-primary">React developers</span>
+              Welcome, <span className="text-gradient-primary">{user?.name}</span>
             </h2>
             <p className="mt-3 text-sm text-muted-foreground max-w-2xl">
-              Reasoning: No leads in pipeline for next week. A matching gig was posted
-              4 hours ago with high alignment to your portfolio.
+              {profile?.bio || "You haven't added a bio yet. Update your profile to stand out to clients."}
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="text-xs text-muted-foreground">Confidence</div>
-                <div className="relative h-1.5 w-40 rounded-full bg-white/10 overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-gradient-primary rounded-full"
-                    style={{ width: "92%" }}
-                  />
-                </div>
-                <div className="text-xs font-semibold">92%</div>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-primary hover:brightness-110 transition">
-                Execute Action
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <Link
-                to="/opportunities"
-                className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium glass hover:bg-white/10 transition"
-              >
-                View Details
-              </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              {profile?.skills?.map((skill: string) => (
+                <span key={skill} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs font-medium">
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-        {stats.map((s) => {
+      {/* Stats Summary */}
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {freelancerStats.map((s) => {
           const Icon = s.icon;
           return (
             <div
@@ -165,111 +150,72 @@ function Dashboard() {
                 <Icon className="h-3.5 w-3.5 text-muted-foreground" />
               </div>
               <div className="mt-3 flex items-baseline gap-2">
-                <div className="text-2xl md:text-3xl font-semibold tracking-tight">
+                <div className="text-xl md:text-2xl font-semibold tracking-tight">
                   {s.value}
                 </div>
-                <div className="text-[11px] text-success font-medium">{s.delta}</div>
+                <div className="text-[10px] text-primary font-medium">{s.delta}</div>
               </div>
             </div>
           );
         })}
       </section>
 
-      {/* Agents grid */}
-      <section>
-        <div className="flex items-end justify-between mb-4">
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              Agent Modules
-            </div>
-            <h3 className="mt-1 text-xl font-semibold tracking-tight">
-              Your autonomous operators
-            </h3>
+      {/* Placeholder Job Matching */}
+      <section className="grid lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Recommended Jobs</div>
+            <button className="text-xs text-primary font-medium hover:underline">View All</button>
           </div>
-        </div>
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
-          {agents.map((a) => {
-            const Icon = a.icon;
-            return (
-              <div
-                key={a.name}
-                className="group relative overflow-hidden rounded-2xl glass p-5 transition-all hover:-translate-y-0.5 hover:bg-white/[0.07] hover:shadow-[0_20px_60px_-20px_oklch(0.5_0.2_280/0.5)]"
-              >
-                <div
-                  aria-hidden
-                  className={`absolute -top-12 -right-12 h-32 w-32 rounded-full ${a.gradient} opacity-20 blur-2xl group-hover:opacity-40 transition-opacity`}
-                />
-                <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${a.gradient} text-primary-foreground shadow-lg`}>
-                  <Icon className="h-5 w-5" />
+          
+          {[
+            { title: "Senior React Architect", company: "MetaScale", rate: "$120/hr", tags: ["React", "TypeScript"] },
+            { title: "AI Integration Lead", company: "CyberNexus", rate: "$150/hr", tags: ["Python", "OpenAI"] },
+            { title: "Product Designer", company: "Vivid UI", rate: "$90/hr", tags: ["Figma", "UI/UX"] },
+          ].map((job, i) => (
+            <div key={i} className="glass rounded-2xl p-5 group flex items-start gap-4 hover:bg-white/10 transition-all cursor-pointer">
+              <div className="h-12 w-12 rounded-xl bg-white/5 flex items-center justify-center text-lg font-bold">
+                {job.company[0]}
+              </div>
+              <div className="flex-1">
+                <h4 className="font-semibold">{job.title}</h4>
+                <div className="text-xs text-muted-foreground mt-1">{job.company} • {job.rate}</div>
+                <div className="flex gap-2 mt-3">
+                  {job.tags.map(t => (
+                    <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-muted-foreground">{t}</span>
+                  ))}
                 </div>
-                <h4 className="mt-4 text-base font-semibold tracking-tight">{a.name}</h4>
-                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed min-h-[48px]">
-                  {a.desc}
-                </p>
-                <button className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:gap-2.5 transition-all">
-                  {a.action}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
               </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Alerts + System log */}
-      <section className="grid lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 space-y-3">
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            <AlertTriangle className="h-3 w-3" />
-            Smart Alerts
-          </div>
-          {alerts.map((a) => (
-            <div
-              key={a.title}
-              className="glass rounded-xl p-4 flex gap-4 items-start hover:bg-white/[0.07] transition-colors"
-            >
-              <div
-                className={`mt-1 h-2 w-2 rounded-full shrink-0 ${
-                  a.tone === "danger"
-                    ? "bg-destructive"
-                    : a.tone === "warning"
-                    ? "bg-warning"
-                    : "bg-brand-cyan"
-                } animate-glow-pulse`}
-              />
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium">{a.title}</div>
-                <div className="text-xs text-muted-foreground mt-0.5">{a.body}</div>
-              </div>
-              <button className="text-xs px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                Resolve
-              </button>
+              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors self-center" />
             </div>
           ))}
         </div>
 
-        <div className="glass rounded-2xl p-5">
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            <TrendingUp className="h-3 w-3" />
-            System Log
-          </div>
-          <div className="mt-4 space-y-4 text-sm">
-            {[
-              "AgentOS found 3 new opportunities",
-              "Analyzing your revenue patterns…",
-              "Drafted follow-up to Mariposa Inc.",
-              "Trend Radar flagged a rising niche: AI ops",
-            ].map((line, i) => (
-              <div key={i} className="flex gap-3 items-start">
-                <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                <div>
-                  <div className="text-foreground/90">{line}</div>
-                  <div className="text-[11px] text-muted-foreground mt-0.5">
-                    {i === 1 ? "now" : `${(i + 1) * 6}m ago`}
-                  </div>
-                </div>
+        <div className="glass rounded-2xl p-6 h-fit sticky top-24">
+          <h3 className="font-semibold text-lg flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-primary" />
+            AI Readiness
+          </h3>
+          <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+            Your profile is {(user?.isOnboarded ? 100 : 0)}% complete. 
+            AI optimization is analyzing your bio to suggest better skill keywords.
+          </p>
+          <div className="mt-6 space-y-4">
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-[11px] font-medium">
+                <span>Verification</span>
+                <span>{user?.isOnboarded ? "100%" : "0%"}</span>
               </div>
-            ))}
+              <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-primary rounded-full transition-all duration-1000"
+                  style={{ width: user?.isOnboarded ? "100%" : "0%" }}
+                />
+              </div>
+            </div>
+            <button className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-medium transition-colors border border-white/5">
+              Edit Professional Profile
+            </button>
           </div>
         </div>
       </section>

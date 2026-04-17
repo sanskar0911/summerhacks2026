@@ -74,7 +74,50 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { AuthProvider, useAuth } from "../lib/auth";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "@tanstack/react-router";
+
 function RootComponent() {
+  return (
+    <AuthProvider>
+      <AuthAwareApp />
+    </AuthProvider>
+  );
+}
+
+function AuthAwareApp() {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!loading) {
+      const isAuthRoute = location.pathname === "/login";
+      const isOnboardingRoute = location.pathname === "/onboarding";
+
+      if (!user) {
+        if (!isAuthRoute) {
+          navigate({ to: "/login" });
+        }
+      } else if (!user.isOnboarded) {
+        if (!isOnboardingRoute) {
+          navigate({ to: "/onboarding" });
+        }
+      } else if (isAuthRoute || isOnboardingRoute) {
+        navigate({ to: "/" });
+      }
+    }
+  }, [user, loading, location.pathname]);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+      </div>
+    );
+  }
+
   return (
     <AppShell>
       <Outlet />

@@ -21,9 +21,25 @@ const nav = [
   { to: "/insights", label: "Insights", icon: TrendingUp },
 ] as const;
 
+import { useAuth } from "../lib/auth";
+import { LogOut } from "lucide-react";
+
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { user, logout } = useAuth();
+
+  if (!user && pathname === "/login") {
+    return <main className="flex-1 w-full">{children}</main>;
+  }
+
+  const userInitials = user?.name
+    ? user.name
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+    : "??";
 
   return (
     <div className="min-h-screen flex w-full text-foreground">
@@ -69,13 +85,13 @@ export function AppShell({ children }: { children: ReactNode }) {
             })}
           </nav>
 
-          <div className="mt-auto rounded-xl glass-strong p-3 text-xs">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-success animate-glow-pulse" />
-              System healthy
-            </div>
-            <div className="mt-1 text-foreground/80">12 tasks automated today</div>
-          </div>
+          <button
+            onClick={logout}
+            className="mt-auto group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+          >
+            <LogOut className="h-4 w-4" />
+            <span className="font-medium">Logout</span>
+          </button>
         </div>
       </aside>
 
@@ -109,7 +125,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
             <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground ml-4 px-3 py-1.5 rounded-full bg-white/5">
               <TypingDots className="text-primary" />
-              <span className="shimmer-text">Analyzing your business…</span>
+              <span className="shimmer-text">Welcome back, {user?.name?.split(" ")[0]}…</span>
             </div>
 
             <div className="ml-auto flex items-center gap-2">
@@ -117,11 +133,11 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <Bell className="h-4 w-4" />
                 <span className="absolute top-2 right-2 h-1.5 w-1.5 rounded-full bg-warning" />
               </button>
-              <div className="flex items-center gap-2.5 pl-2 pr-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors cursor-pointer">
-                <div className="h-7 w-7 rounded-full bg-gradient-primary grid place-items-center text-xs font-semibold text-primary-foreground">
-                  AK
+              <div className="flex items-center gap-2.5 pl-2 pr-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                <div className="h-7 w-7 rounded-full bg-gradient-primary grid place-items-center text-[10px] font-semibold text-primary-foreground group-hover:scale-105 transition-transform">
+                  {userInitials}
                 </div>
-                <span className="hidden sm:inline text-xs font-medium">Alex K.</span>
+                <span className="hidden sm:inline text-xs font-medium">{user?.name}</span>
               </div>
             </div>
           </div>
