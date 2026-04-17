@@ -1,0 +1,6002 @@
+[
+  {
+    "id": 1,
+    "title": "React Developer",
+    "category": "Tech",
+    "skills": [
+      "React Developer"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 45
+  },
+  {
+    "id": 2,
+    "title": "React Developer",
+    "category": "Tech",
+    "skills": [
+      "React Developer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 53
+  },
+  {
+    "id": 3,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 47
+  },
+  {
+    "id": 4,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 35329,
+    "proposals": 5
+  },
+  {
+    "id": 5,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 6,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 7,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 8,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 9,
+    "title": "React Developer",
+    "category": "Tech",
+    "skills": [
+      "React Developer"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 42425,
+    "proposals": 3
+  },
+  {
+    "id": 10,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "fixed",
+    "budget": 3780,
+    "proposals": 24
+  },
+  {
+    "id": 11,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 44
+  },
+  {
+    "id": 12,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 51
+  },
+  {
+    "id": 13,
+    "title": "React Developer",
+    "category": "Tech",
+    "skills": [
+      "React Developer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 26960,
+    "proposals": 17
+  },
+  {
+    "id": 14,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 3879,
+    "proposals": 19
+  },
+  {
+    "id": 15,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 42554,
+    "proposals": 26
+  },
+  {
+    "id": 16,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 17,
+    "title": "Backend Engineer",
+    "category": "Tech",
+    "skills": [
+      "Backend Engineer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 43
+  },
+  {
+    "id": 18,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 15
+  },
+  {
+    "id": 19,
+    "title": "Python Developer",
+    "category": "Tech",
+    "skills": [
+      "Python Developer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "hourly",
+    "budget": 10383,
+    "proposals": 12
+  },
+  {
+    "id": 20,
+    "title": "React Developer",
+    "category": "Tech",
+    "skills": [
+      "React Developer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 21,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "hourly",
+    "budget": 37890,
+    "proposals": 1
+  },
+  {
+    "id": 22,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "18 hours ago",
+    "payment_type": "fixed",
+    "budget": 19646,
+    "proposals": 7
+  },
+  {
+    "id": 23,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "hourly",
+    "budget": 31117,
+    "proposals": 13
+  },
+  {
+    "id": 24,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 45821,
+    "proposals": 11
+  },
+  {
+    "id": 25,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 22664,
+    "proposals": 25
+  },
+  {
+    "id": 26,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "hourly",
+    "budget": 20763,
+    "proposals": 23
+  },
+  {
+    "id": 27,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "20 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 28,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "20 hours ago",
+    "payment_type": "hourly",
+    "budget": 9659,
+    "proposals": 29
+  },
+  {
+    "id": 29,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "hourly",
+    "budget": 25910,
+    "proposals": 24
+  },
+  {
+    "id": 30,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "fixed",
+    "budget": 20826,
+    "proposals": 5
+  },
+  {
+    "id": 31,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 31930,
+    "proposals": 24
+  },
+  {
+    "id": 32,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 47059,
+    "proposals": 10
+  },
+  {
+    "id": 33,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 49607,
+    "proposals": 10
+  },
+  {
+    "id": 34,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 35,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 57
+  },
+  {
+    "id": 36,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "17 hours ago",
+    "payment_type": "hourly",
+    "budget": 47201,
+    "proposals": 20
+  },
+  {
+    "id": 37,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 57
+  },
+  {
+    "id": 38,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "12 hours ago",
+    "payment_type": "fixed",
+    "budget": 34680,
+    "proposals": 20
+  },
+  {
+    "id": 39,
+    "title": "Graphic Designer",
+    "category": "Design",
+    "skills": [
+      "Graphic Designer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 40,
+    "title": "UI/UX Designer",
+    "category": "Design",
+    "skills": [
+      "UI/UX Designer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 33136,
+    "proposals": 6
+  },
+  {
+    "id": 41,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "11 hours ago",
+    "payment_type": "hourly",
+    "budget": 13443,
+    "proposals": 30
+  },
+  {
+    "id": 42,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "16 hours ago",
+    "payment_type": "fixed",
+    "budget": 15495,
+    "proposals": 4
+  },
+  {
+    "id": 43,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "hourly",
+    "budget": 42304,
+    "proposals": 10
+  },
+  {
+    "id": 44,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 42
+  },
+  {
+    "id": 45,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 44
+  },
+  {
+    "id": 46,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 47,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 20
+  },
+  {
+    "id": 48,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 33916,
+    "proposals": 24
+  },
+  {
+    "id": 49,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 11
+  },
+  {
+    "id": 50,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 29
+  },
+  {
+    "id": 51,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 46
+  },
+  {
+    "id": 52,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "6 hours ago",
+    "payment_type": "fixed",
+    "budget": 27798,
+    "proposals": 5
+  },
+  {
+    "id": 53,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "hourly",
+    "budget": 30931,
+    "proposals": 5
+  },
+  {
+    "id": 54,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 21
+  },
+  {
+    "id": 55,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 34
+  },
+  {
+    "id": 56,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "hourly",
+    "budget": 23544,
+    "proposals": 12
+  },
+  {
+    "id": 57,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 30
+  },
+  {
+    "id": 58,
+    "title": "Content Writer",
+    "category": "Writing",
+    "skills": [
+      "Content Writer"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 21
+  },
+  {
+    "id": 59,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "12 hours ago",
+    "payment_type": "hourly",
+    "budget": 48222,
+    "proposals": 19
+  },
+  {
+    "id": 60,
+    "title": "Copywriter",
+    "category": "Writing",
+    "skills": [
+      "Copywriter"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 11148,
+    "proposals": 13
+  },
+  {
+    "id": 61,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 62,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "20 hours ago",
+    "payment_type": "fixed",
+    "budget": 28622,
+    "proposals": 13
+  },
+  {
+    "id": 63,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 55
+  },
+  {
+    "id": 64,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 24275,
+    "proposals": 20
+  },
+  {
+    "id": 65,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "hourly",
+    "budget": 9961,
+    "proposals": 21
+  },
+  {
+    "id": 66,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 54
+  },
+  {
+    "id": 67,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 28544,
+    "proposals": 29
+  },
+  {
+    "id": 68,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 36990,
+    "proposals": 14
+  },
+  {
+    "id": 69,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 70,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 22
+  },
+  {
+    "id": 71,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "hourly",
+    "budget": 48607,
+    "proposals": 6
+  },
+  {
+    "id": 72,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "22 hours ago",
+    "payment_type": "hourly",
+    "budget": 45409,
+    "proposals": 11
+  },
+  {
+    "id": 73,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 74,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 75,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 76,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 20
+  },
+  {
+    "id": 77,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "fixed",
+    "budget": 27786,
+    "proposals": 5
+  },
+  {
+    "id": 78,
+    "title": "SEO Specialist",
+    "category": "Marketing",
+    "skills": [
+      "SEO Specialist"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 33
+  },
+  {
+    "id": 79,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 11687,
+    "proposals": 4
+  },
+  {
+    "id": 80,
+    "title": "Digital Marketer",
+    "category": "Marketing",
+    "skills": [
+      "Digital Marketer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 15
+  },
+  {
+    "id": 81,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 82,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 26
+  },
+  {
+    "id": 83,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "12 hours ago",
+    "payment_type": "hourly",
+    "budget": 24298,
+    "proposals": 13
+  },
+  {
+    "id": 84,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "hourly",
+    "budget": 16573,
+    "proposals": 14
+  },
+  {
+    "id": 85,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "20 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 17
+  },
+  {
+    "id": 86,
+    "title": "Field Sales Agent",
+    "category": "Sales",
+    "skills": [
+      "Field Sales Agent"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "1 hours ago",
+    "payment_type": "fixed",
+    "budget": 36913,
+    "proposals": 5
+  },
+  {
+    "id": 87,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "10 hours ago",
+    "payment_type": "hourly",
+    "budget": 9359,
+    "proposals": 21
+  },
+  {
+    "id": 88,
+    "title": "Field Sales Agent",
+    "category": "Sales",
+    "skills": [
+      "Field Sales Agent"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 89,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 20818,
+    "proposals": 3
+  },
+  {
+    "id": 90,
+    "title": "Field Sales Agent",
+    "category": "Sales",
+    "skills": [
+      "Field Sales Agent"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "1 hours ago",
+    "payment_type": "hourly",
+    "budget": 10171,
+    "proposals": 1
+  },
+  {
+    "id": 91,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 26
+  },
+  {
+    "id": 92,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "23 hours ago",
+    "payment_type": "hourly",
+    "budget": 39734,
+    "proposals": 8
+  },
+  {
+    "id": 93,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 53
+  },
+  {
+    "id": 94,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "hourly",
+    "budget": 29633,
+    "proposals": 16
+  },
+  {
+    "id": 95,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 56
+  },
+  {
+    "id": 96,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 46
+  },
+  {
+    "id": 97,
+    "title": "Field Sales Agent",
+    "category": "Sales",
+    "skills": [
+      "Field Sales Agent"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 36
+  },
+  {
+    "id": 98,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 18
+  },
+  {
+    "id": 99,
+    "title": "Field Sales Agent",
+    "category": "Sales",
+    "skills": [
+      "Field Sales Agent"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 27
+  },
+  {
+    "id": 100,
+    "title": "Sales Executive",
+    "category": "Sales",
+    "skills": [
+      "Sales Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 49
+  },
+  {
+    "id": 101,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 102,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 45252,
+    "proposals": 5
+  },
+  {
+    "id": 103,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "hourly",
+    "budget": 19588,
+    "proposals": 29
+  },
+  {
+    "id": 104,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "hourly",
+    "budget": 23463,
+    "proposals": 3
+  },
+  {
+    "id": 105,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 18
+  },
+  {
+    "id": 106,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "hourly",
+    "budget": 5224,
+    "proposals": 28
+  },
+  {
+    "id": 107,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 51
+  },
+  {
+    "id": 108,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "1 hours ago",
+    "payment_type": "hourly",
+    "budget": 26951,
+    "proposals": 13
+  },
+  {
+    "id": 109,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "8 hours ago",
+    "payment_type": "hourly",
+    "budget": 40474,
+    "proposals": 17
+  },
+  {
+    "id": 110,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 11
+  },
+  {
+    "id": 111,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 33318,
+    "proposals": 15
+  },
+  {
+    "id": 112,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 49
+  },
+  {
+    "id": 113,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 47
+  },
+  {
+    "id": 114,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 49181,
+    "proposals": 2
+  },
+  {
+    "id": 115,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 16
+  },
+  {
+    "id": 116,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 7822,
+    "proposals": 26
+  },
+  {
+    "id": 117,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "13 hours ago",
+    "payment_type": "hourly",
+    "budget": 42794,
+    "proposals": 23
+  },
+  {
+    "id": 118,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 42604,
+    "proposals": 24
+  },
+  {
+    "id": 119,
+    "title": "Accountant",
+    "category": "Finance",
+    "skills": [
+      "Accountant"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "fixed",
+    "budget": 5074,
+    "proposals": 8
+  },
+  {
+    "id": 120,
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "skills": [
+      "Financial Analyst"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 12042,
+    "proposals": 11
+  },
+  {
+    "id": 121,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "6 hours ago",
+    "payment_type": "hourly",
+    "budget": 5542,
+    "proposals": 26
+  },
+  {
+    "id": 122,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 14749,
+    "proposals": 14
+  },
+  {
+    "id": 123,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "17 hours ago",
+    "payment_type": "hourly",
+    "budget": 22884,
+    "proposals": 25
+  },
+  {
+    "id": 124,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 23698,
+    "proposals": 17
+  },
+  {
+    "id": 125,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 19
+  },
+  {
+    "id": 126,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 35
+  },
+  {
+    "id": 127,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 128,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 43
+  },
+  {
+    "id": 129,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "hourly",
+    "budget": 26565,
+    "proposals": 19
+  },
+  {
+    "id": 130,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 15
+  },
+  {
+    "id": 131,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 47
+  },
+  {
+    "id": 132,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "24 hours ago",
+    "payment_type": "fixed",
+    "budget": 12788,
+    "proposals": 1
+  },
+  {
+    "id": 133,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 134,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 42471,
+    "proposals": 26
+  },
+  {
+    "id": 135,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 19748,
+    "proposals": 22
+  },
+  {
+    "id": 136,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 33
+  },
+  {
+    "id": 137,
+    "title": "Recruiter",
+    "category": "HR",
+    "skills": [
+      "Recruiter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 46
+  },
+  {
+    "id": 138,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "7 hours ago",
+    "payment_type": "fixed",
+    "budget": 29487,
+    "proposals": 8
+  },
+  {
+    "id": 139,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 52
+  },
+  {
+    "id": 140,
+    "title": "HR Executive",
+    "category": "HR",
+    "skills": [
+      "HR Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "13 hours ago",
+    "payment_type": "hourly",
+    "budget": 6752,
+    "proposals": 17
+  },
+  {
+    "id": 141,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 37088,
+    "proposals": 13
+  },
+  {
+    "id": 142,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 52
+  },
+  {
+    "id": 143,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 12360,
+    "proposals": 17
+  },
+  {
+    "id": 144,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 39
+  },
+  {
+    "id": 145,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "15 hours ago",
+    "payment_type": "hourly",
+    "budget": 46775,
+    "proposals": 20
+  },
+  {
+    "id": 146,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 60
+  },
+  {
+    "id": 147,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 21
+  },
+  {
+    "id": 148,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 18
+  },
+  {
+    "id": 149,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 10101,
+    "proposals": 17
+  },
+  {
+    "id": 150,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 151,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 26
+  },
+  {
+    "id": 152,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 153,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 19
+  },
+  {
+    "id": 154,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 19
+  },
+  {
+    "id": 155,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 59
+  },
+  {
+    "id": 156,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 157,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "12 hours ago",
+    "payment_type": "hourly",
+    "budget": 42311,
+    "proposals": 22
+  },
+  {
+    "id": 158,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 5193,
+    "proposals": 30
+  },
+  {
+    "id": 159,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "3 hours ago",
+    "payment_type": "fixed",
+    "budget": 28473,
+    "proposals": 1
+  },
+  {
+    "id": 160,
+    "title": "Customer Support Executive",
+    "category": "Customer Support",
+    "skills": [
+      "Customer Support Executive"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "fixed",
+    "budget": 14944,
+    "proposals": 28
+  },
+  {
+    "id": 161,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "3 hours ago",
+    "payment_type": "fixed",
+    "budget": 4012,
+    "proposals": 21
+  },
+  {
+    "id": 162,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 46939,
+    "proposals": 2
+  },
+  {
+    "id": 163,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 15
+  },
+  {
+    "id": 164,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 23
+  },
+  {
+    "id": 165,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 38
+  },
+  {
+    "id": 166,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "6 hours ago",
+    "payment_type": "fixed",
+    "budget": 7978,
+    "proposals": 4
+  },
+  {
+    "id": 167,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 38
+  },
+  {
+    "id": 168,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 16291,
+    "proposals": 10
+  },
+  {
+    "id": 169,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 36
+  },
+  {
+    "id": 170,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 171,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 27
+  },
+  {
+    "id": 172,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 39
+  },
+  {
+    "id": 173,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 26923,
+    "proposals": 21
+  },
+  {
+    "id": 174,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 25
+  },
+  {
+    "id": 175,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 35
+  },
+  {
+    "id": 176,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 18889,
+    "proposals": 15
+  },
+  {
+    "id": 177,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "hourly",
+    "budget": 32432,
+    "proposals": 4
+  },
+  {
+    "id": 178,
+    "title": "Courier Partner",
+    "category": "Delivery",
+    "skills": [
+      "Courier Partner"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 27029,
+    "proposals": 11
+  },
+  {
+    "id": 179,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "hourly",
+    "budget": 24579,
+    "proposals": 13
+  },
+  {
+    "id": 180,
+    "title": "Delivery Driver",
+    "category": "Delivery",
+    "skills": [
+      "Delivery Driver"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 33
+  },
+  {
+    "id": 181,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 182,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 53
+  },
+  {
+    "id": 183,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 54
+  },
+  {
+    "id": 184,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 17
+  },
+  {
+    "id": 185,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 26
+  },
+  {
+    "id": 186,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "13 hours ago",
+    "payment_type": "hourly",
+    "budget": 20826,
+    "proposals": 22
+  },
+  {
+    "id": 187,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "21 hours ago",
+    "payment_type": "hourly",
+    "budget": 39502,
+    "proposals": 10
+  },
+  {
+    "id": 188,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 51
+  },
+  {
+    "id": 189,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "10 hours ago",
+    "payment_type": "fixed",
+    "budget": 9700,
+    "proposals": 6
+  },
+  {
+    "id": 190,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "3 hours ago",
+    "payment_type": "fixed",
+    "budget": 30425,
+    "proposals": 13
+  },
+  {
+    "id": 191,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 11836,
+    "proposals": 23
+  },
+  {
+    "id": 192,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "hourly",
+    "budget": 30160,
+    "proposals": 30
+  },
+  {
+    "id": 193,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 60
+  },
+  {
+    "id": 194,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 37759,
+    "proposals": 27
+  },
+  {
+    "id": 195,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 196,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "22 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 29
+  },
+  {
+    "id": 197,
+    "title": "Waiter",
+    "category": "Hospitality",
+    "skills": [
+      "Waiter"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "16 hours ago",
+    "payment_type": "fixed",
+    "budget": 39281,
+    "proposals": 3
+  },
+  {
+    "id": 198,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 19
+  },
+  {
+    "id": 199,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 4498,
+    "proposals": 21
+  },
+  {
+    "id": 200,
+    "title": "Hotel Receptionist",
+    "category": "Hospitality",
+    "skills": [
+      "Hotel Receptionist"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "hourly",
+    "budget": 8993,
+    "proposals": 20
+  },
+  {
+    "id": 201,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 202,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 11
+  },
+  {
+    "id": 203,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 204,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "6 hours ago",
+    "payment_type": "fixed",
+    "budget": 48592,
+    "proposals": 28
+  },
+  {
+    "id": 205,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "23 hours ago",
+    "payment_type": "fixed",
+    "budget": 37363,
+    "proposals": 16
+  },
+  {
+    "id": 206,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 22
+  },
+  {
+    "id": 207,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 14563,
+    "proposals": 24
+  },
+  {
+    "id": 208,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 209,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 210,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 40489,
+    "proposals": 29
+  },
+  {
+    "id": 211,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 45
+  },
+  {
+    "id": 212,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 30
+  },
+  {
+    "id": 213,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "hourly",
+    "budget": 10667,
+    "proposals": 23
+  },
+  {
+    "id": 214,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 47809,
+    "proposals": 19
+  },
+  {
+    "id": 215,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 60
+  },
+  {
+    "id": 216,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 36
+  },
+  {
+    "id": 217,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 22
+  },
+  {
+    "id": 218,
+    "title": "Nurse",
+    "category": "Healthcare",
+    "skills": [
+      "Nurse"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 219,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 7936,
+    "proposals": 11
+  },
+  {
+    "id": 220,
+    "title": "Lab Technician",
+    "category": "Healthcare",
+    "skills": [
+      "Lab Technician"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 30848,
+    "proposals": 4
+  },
+  {
+    "id": 221,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 41522,
+    "proposals": 1
+  },
+  {
+    "id": 222,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "3 hours ago",
+    "payment_type": "hourly",
+    "budget": 49349,
+    "proposals": 9
+  },
+  {
+    "id": 223,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "19 hours ago",
+    "payment_type": "hourly",
+    "budget": 7764,
+    "proposals": 6
+  },
+  {
+    "id": 224,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 54
+  },
+  {
+    "id": 225,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "20 hours ago",
+    "payment_type": "fixed",
+    "budget": 26530,
+    "proposals": 17
+  },
+  {
+    "id": 226,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 227,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 34
+  },
+  {
+    "id": 228,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 39328,
+    "proposals": 14
+  },
+  {
+    "id": 229,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 49
+  },
+  {
+    "id": 230,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 50
+  },
+  {
+    "id": 231,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 41580,
+    "proposals": 29
+  },
+  {
+    "id": 232,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 32902,
+    "proposals": 6
+  },
+  {
+    "id": 233,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "hourly",
+    "budget": 41917,
+    "proposals": 1
+  },
+  {
+    "id": 234,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 56
+  },
+  {
+    "id": 235,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 48
+  },
+  {
+    "id": 236,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "20 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 237,
+    "title": "Tutor",
+    "category": "Education",
+    "skills": [
+      "Tutor"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 238,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "hourly",
+    "budget": 35068,
+    "proposals": 22
+  },
+  {
+    "id": 239,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 33792,
+    "proposals": 27
+  },
+  {
+    "id": 240,
+    "title": "Teacher",
+    "category": "Education",
+    "skills": [
+      "Teacher"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 12
+  },
+  {
+    "id": 241,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 242,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 243,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 46781,
+    "proposals": 27
+  },
+  {
+    "id": 244,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 32
+  },
+  {
+    "id": 245,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 36821,
+    "proposals": 8
+  },
+  {
+    "id": 246,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 44
+  },
+  {
+    "id": 247,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 47
+  },
+  {
+    "id": 248,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 58
+  },
+  {
+    "id": 249,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "22 hours ago",
+    "payment_type": "fixed",
+    "budget": 46675,
+    "proposals": 27
+  },
+  {
+    "id": 250,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "18 hours ago",
+    "payment_type": "fixed",
+    "budget": 17303,
+    "proposals": 24
+  },
+  {
+    "id": 251,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "12 hours ago",
+    "payment_type": "hourly",
+    "budget": 24503,
+    "proposals": 25
+  },
+  {
+    "id": 252,
+    "title": "Electrician",
+    "category": "Construction",
+    "skills": [
+      "Electrician"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 55
+  },
+  {
+    "id": 253,
+    "title": "Electrician",
+    "category": "Construction",
+    "skills": [
+      "Electrician"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 35
+  },
+  {
+    "id": 254,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "fixed",
+    "budget": 16381,
+    "proposals": 10
+  },
+  {
+    "id": 255,
+    "title": "Electrician",
+    "category": "Construction",
+    "skills": [
+      "Electrician"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "4 hours ago",
+    "payment_type": "hourly",
+    "budget": 29789,
+    "proposals": 18
+  },
+  {
+    "id": 256,
+    "title": "Electrician",
+    "category": "Construction",
+    "skills": [
+      "Electrician"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 9800,
+    "proposals": 15
+  },
+  {
+    "id": 257,
+    "title": "Carpenter",
+    "category": "Construction",
+    "skills": [
+      "Carpenter"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 30
+  },
+  {
+    "id": 258,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "8 hours ago",
+    "payment_type": "hourly",
+    "budget": 28155,
+    "proposals": 1
+  },
+  {
+    "id": 259,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 26
+  },
+  {
+    "id": 260,
+    "title": "Plumber",
+    "category": "Construction",
+    "skills": [
+      "Plumber"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 261,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 59
+  },
+  {
+    "id": 262,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 33
+  },
+  {
+    "id": 263,
+    "title": "Babysitter",
+    "category": "Household",
+    "skills": [
+      "Babysitter"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "1 hours ago",
+    "payment_type": "fixed",
+    "budget": 24334,
+    "proposals": 20
+  },
+  {
+    "id": 264,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 43
+  },
+  {
+    "id": 265,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "16 hours ago",
+    "payment_type": "fixed",
+    "budget": 29245,
+    "proposals": 15
+  },
+  {
+    "id": 266,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 42
+  },
+  {
+    "id": 267,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 22
+  },
+  {
+    "id": 268,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 43
+  },
+  {
+    "id": 269,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "fixed",
+    "budget": 4325,
+    "proposals": 18
+  },
+  {
+    "id": 270,
+    "title": "Babysitter",
+    "category": "Household",
+    "skills": [
+      "Babysitter"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 10081,
+    "proposals": 14
+  },
+  {
+    "id": 271,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 13
+  },
+  {
+    "id": 272,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "10 hours ago",
+    "payment_type": "hourly",
+    "budget": 4979,
+    "proposals": 25
+  },
+  {
+    "id": 273,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 30906,
+    "proposals": 25
+  },
+  {
+    "id": 274,
+    "title": "Babysitter",
+    "category": "Household",
+    "skills": [
+      "Babysitter"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 42950,
+    "proposals": 5
+  },
+  {
+    "id": 275,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 46955,
+    "proposals": 6
+  },
+  {
+    "id": 276,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 53
+  },
+  {
+    "id": 277,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "fixed",
+    "budget": 29281,
+    "proposals": 27
+  },
+  {
+    "id": 278,
+    "title": "Cook",
+    "category": "Household",
+    "skills": [
+      "Cook"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 31
+  },
+  {
+    "id": 279,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 16896,
+    "proposals": 9
+  },
+  {
+    "id": 280,
+    "title": "Maid",
+    "category": "Household",
+    "skills": [
+      "Maid"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "11 hours ago",
+    "payment_type": "fixed",
+    "budget": 22439,
+    "proposals": 10
+  },
+  {
+    "id": 281,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "hourly",
+    "budget": 11822,
+    "proposals": 29
+  },
+  {
+    "id": 282,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "hourly",
+    "budget": 42118,
+    "proposals": 3
+  },
+  {
+    "id": 283,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 58
+  },
+  {
+    "id": 284,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 54
+  },
+  {
+    "id": 285,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 286,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 40
+  },
+  {
+    "id": 287,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "1 hours ago",
+    "payment_type": "hourly",
+    "budget": 7823,
+    "proposals": 28
+  },
+  {
+    "id": 288,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 32490,
+    "proposals": 10
+  },
+  {
+    "id": 289,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 56
+  },
+  {
+    "id": 290,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "11 hours ago",
+    "payment_type": "hourly",
+    "budget": 45383,
+    "proposals": 24
+  },
+  {
+    "id": 291,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 34
+  },
+  {
+    "id": 292,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 29
+  },
+  {
+    "id": 293,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 294,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 35
+  },
+  {
+    "id": 295,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "fixed",
+    "budget": 34547,
+    "proposals": 3
+  },
+  {
+    "id": 296,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 21372,
+    "proposals": 1
+  },
+  {
+    "id": 297,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "hourly",
+    "budget": 30049,
+    "proposals": 2
+  },
+  {
+    "id": 298,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "fixed",
+    "budget": 42639,
+    "proposals": 20
+  },
+  {
+    "id": 299,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b95 LPA",
+    "applicants": 35
+  },
+  {
+    "id": 300,
+    "title": "Security Guard",
+    "category": "Security",
+    "skills": [
+      "Security Guard"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 49299,
+    "proposals": 1
+  },
+  {
+    "id": 301,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "22 hours ago",
+    "payment_type": "hourly",
+    "budget": 22786,
+    "proposals": 26
+  },
+  {
+    "id": 302,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 24848,
+    "proposals": 8
+  },
+  {
+    "id": 303,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 304,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 12275,
+    "proposals": 3
+  },
+  {
+    "id": 305,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "16 hours ago",
+    "payment_type": "hourly",
+    "budget": 26105,
+    "proposals": 16
+  },
+  {
+    "id": 306,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "23 hours ago",
+    "payment_type": "fixed",
+    "budget": 6204,
+    "proposals": 30
+  },
+  {
+    "id": 307,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b92 LPA",
+    "applicants": 16
+  },
+  {
+    "id": 308,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 30
+  },
+  {
+    "id": 309,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 12533,
+    "proposals": 13
+  },
+  {
+    "id": 310,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "10 hours ago",
+    "payment_type": "fixed",
+    "budget": 37226,
+    "proposals": 5
+  },
+  {
+    "id": 311,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 19917,
+    "proposals": 4
+  },
+  {
+    "id": 312,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 21
+  },
+  {
+    "id": 313,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 38
+  },
+  {
+    "id": 314,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "24 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 315,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "12 hours ago",
+    "payment_type": "fixed",
+    "budget": 13973,
+    "proposals": 28
+  },
+  {
+    "id": 316,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "7 hours ago",
+    "payment_type": "hourly",
+    "budget": 28928,
+    "proposals": 17
+  },
+  {
+    "id": 317,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "10 hours ago",
+    "payment_type": "fixed",
+    "budget": 47419,
+    "proposals": 5
+  },
+  {
+    "id": 318,
+    "title": "Truck Driver",
+    "category": "Transport",
+    "skills": [
+      "Truck Driver"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "20 hours ago",
+    "payment_type": "fixed",
+    "budget": 28685,
+    "proposals": 27
+  },
+  {
+    "id": 319,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "17 hours ago",
+    "payment_type": "hourly",
+    "budget": 46808,
+    "proposals": 3
+  },
+  {
+    "id": 320,
+    "title": "Driver",
+    "category": "Transport",
+    "skills": [
+      "Driver"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 7128,
+    "proposals": 10
+  },
+  {
+    "id": 321,
+    "title": "Shop Assistant",
+    "category": "Retail",
+    "skills": [
+      "Shop Assistant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 322,
+    "title": "Shop Assistant",
+    "category": "Retail",
+    "skills": [
+      "Shop Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "13 hours ago",
+    "payment_type": "hourly",
+    "budget": 42917,
+    "proposals": 18
+  },
+  {
+    "id": 323,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 16
+  },
+  {
+    "id": 324,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "11 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 51
+  },
+  {
+    "id": 325,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 47
+  },
+  {
+    "id": 326,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 3755,
+    "proposals": 16
+  },
+  {
+    "id": 327,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "3 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 44
+  },
+  {
+    "id": 328,
+    "title": "Shop Assistant",
+    "category": "Retail",
+    "skills": [
+      "Shop Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "hourly",
+    "budget": 7549,
+    "proposals": 29
+  },
+  {
+    "id": 329,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 330,
+    "title": "Shop Assistant",
+    "category": "Retail",
+    "skills": [
+      "Shop Assistant"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 38
+  },
+  {
+    "id": 331,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "20 hours ago",
+    "payment_type": "fixed",
+    "budget": 30977,
+    "proposals": 10
+  },
+  {
+    "id": 332,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 20400,
+    "proposals": 1
+  },
+  {
+    "id": 333,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "2 hours ago",
+    "payment_type": "fixed",
+    "budget": 14228,
+    "proposals": 12
+  },
+  {
+    "id": 334,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "5 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 335,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 36
+  },
+  {
+    "id": 336,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 18
+  },
+  {
+    "id": 337,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "16 hours ago",
+    "payment_type": "hourly",
+    "budget": 44495,
+    "proposals": 22
+  },
+  {
+    "id": 338,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "2 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 339,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 50
+  },
+  {
+    "id": 340,
+    "title": "Store Manager",
+    "category": "Retail",
+    "skills": [
+      "Store Manager"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 5847,
+    "proposals": 5
+  },
+  {
+    "id": 341,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 40
+  },
+  {
+    "id": 342,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "19 hours ago",
+    "payment_type": "hourly",
+    "budget": 47452,
+    "proposals": 6
+  },
+  {
+    "id": 343,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "6 hours ago",
+    "payment_type": "fixed",
+    "budget": 3518,
+    "proposals": 13
+  },
+  {
+    "id": 344,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 58
+  },
+  {
+    "id": 345,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 52
+  },
+  {
+    "id": 346,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 45
+  },
+  {
+    "id": 347,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 18
+  },
+  {
+    "id": 348,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 39
+  },
+  {
+    "id": 349,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Remote",
+    "posted_time": "19 hours ago",
+    "payment_type": "hourly",
+    "budget": 19898,
+    "proposals": 10
+  },
+  {
+    "id": 350,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "24 hours ago",
+    "payment_type": "hourly",
+    "budget": 6400,
+    "proposals": 15
+  },
+  {
+    "id": 351,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 352,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 23008,
+    "proposals": 21
+  },
+  {
+    "id": 353,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 354,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "20 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b915 LPA",
+    "applicants": 52
+  },
+  {
+    "id": 355,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "20 hours ago",
+    "payment_type": "hourly",
+    "budget": 32069,
+    "proposals": 25
+  },
+  {
+    "id": 356,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "18 hours ago",
+    "payment_type": "fixed",
+    "budget": 33452,
+    "proposals": 9
+  },
+  {
+    "id": 357,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 7997,
+    "proposals": 10
+  },
+  {
+    "id": 358,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "10 hours ago",
+    "payment_type": "hourly",
+    "budget": 7385,
+    "proposals": 2
+  },
+  {
+    "id": 359,
+    "title": "Event Coordinator",
+    "category": "Events",
+    "skills": [
+      "Event Coordinator"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "14 hours ago",
+    "payment_type": "fixed",
+    "budget": 41075,
+    "proposals": 21
+  },
+  {
+    "id": 360,
+    "title": "Photographer",
+    "category": "Events",
+    "skills": [
+      "Photographer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "22 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 361,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "18 hours ago",
+    "payment_type": "hourly",
+    "budget": 36036,
+    "proposals": 9
+  },
+  {
+    "id": 362,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 53
+  },
+  {
+    "id": 363,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 364,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "23 hours ago",
+    "payment_type": "hourly",
+    "budget": 15554,
+    "proposals": 13
+  },
+  {
+    "id": 365,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "hourly",
+    "budget": 12842,
+    "proposals": 6
+  },
+  {
+    "id": 366,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "hourly",
+    "budget": 9649,
+    "proposals": 30
+  },
+  {
+    "id": 367,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 368,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "7 hours ago",
+    "payment_type": "fixed",
+    "budget": 5184,
+    "proposals": 10
+  },
+  {
+    "id": 369,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "12 hours ago",
+    "payment_type": "hourly",
+    "budget": 28868,
+    "proposals": 16
+  },
+  {
+    "id": 370,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Remote",
+    "posted_time": "7 hours ago",
+    "payment_type": "hourly",
+    "budget": 42668,
+    "proposals": 4
+  },
+  {
+    "id": 371,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "6 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b912 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 372,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Bangalore",
+    "posted_time": "5 hours ago",
+    "payment_type": "fixed",
+    "budget": 7894,
+    "proposals": 21
+  },
+  {
+    "id": 373,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Delhi",
+    "posted_time": "9 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 52
+  },
+  {
+    "id": 374,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "7 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b93 LPA",
+    "applicants": 45
+  },
+  {
+    "id": 375,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "Upwork",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 24
+  },
+  {
+    "id": 376,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b97 LPA",
+    "applicants": 10
+  },
+  {
+    "id": 377,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "14 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 378,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "15 hours ago",
+    "payment_type": "fixed",
+    "budget": 10119,
+    "proposals": 30
+  },
+  {
+    "id": 379,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "fixed",
+    "budget": 32457,
+    "proposals": 30
+  },
+  {
+    "id": 380,
+    "title": "Legal Assistant",
+    "category": "Legal",
+    "skills": [
+      "Legal Assistant"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "15 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b94 LPA",
+    "applicants": 45
+  },
+  {
+    "id": 381,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Bangalore",
+    "posted_time": "1 hours ago",
+    "payment_type": "fixed",
+    "budget": 33993,
+    "proposals": 17
+  },
+  {
+    "id": 382,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "21 hours ago",
+    "payment_type": "fixed",
+    "budget": 26797,
+    "proposals": 25
+  },
+  {
+    "id": 383,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Mumbai",
+    "posted_time": "1 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 41
+  },
+  {
+    "id": 384,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "18 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b99 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 385,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "job",
+    "platform": "Freelancer",
+    "location": "Delhi",
+    "posted_time": "12 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b96 LPA",
+    "applicants": 39
+  },
+  {
+    "id": 386,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Bangalore",
+    "posted_time": "9 hours ago",
+    "payment_type": "fixed",
+    "budget": 36030,
+    "proposals": 20
+  },
+  {
+    "id": 387,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "16 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b98 LPA",
+    "applicants": 23
+  },
+  {
+    "id": 388,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "hourly",
+    "budget": 7447,
+    "proposals": 8
+  },
+  {
+    "id": 389,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "job",
+    "platform": "LinkedIn",
+    "location": "Mumbai",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b910 LPA",
+    "applicants": 37
+  },
+  {
+    "id": 390,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "freelance",
+    "platform": "LinkedIn",
+    "location": "Remote",
+    "posted_time": "20 hours ago",
+    "payment_type": "fixed",
+    "budget": 41877,
+    "proposals": 2
+  },
+  {
+    "id": 391,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "freelance",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "4 hours ago",
+    "payment_type": "fixed",
+    "budget": 20052,
+    "proposals": 12
+  },
+  {
+    "id": 392,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b914 LPA",
+    "applicants": 58
+  },
+  {
+    "id": 393,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "job",
+    "platform": "Indeed",
+    "location": "Remote",
+    "posted_time": "8 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 14
+  },
+  {
+    "id": 394,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "8 hours ago",
+    "payment_type": "fixed",
+    "budget": 25132,
+    "proposals": 15
+  },
+  {
+    "id": 395,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Bangalore",
+    "posted_time": "13 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b911 LPA",
+    "applicants": 28
+  },
+  {
+    "id": 396,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Mumbai",
+    "posted_time": "19 hours ago",
+    "payment_type": "fixed",
+    "budget": 37029,
+    "proposals": 14
+  },
+  {
+    "id": 397,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Delhi",
+    "posted_time": "2 hours ago",
+    "payment_type": "hourly",
+    "budget": 37760,
+    "proposals": 1
+  },
+  {
+    "id": 398,
+    "title": "Gym Trainer",
+    "category": "Fitness",
+    "skills": [
+      "Gym Trainer"
+    ],
+    "type": "job",
+    "platform": "LocalJobs",
+    "location": "Delhi",
+    "posted_time": "4 hours ago",
+    "payment_type": "salary",
+    "salary": "\u20b913 LPA",
+    "applicants": 12
+  },
+  {
+    "id": 399,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Upwork",
+    "location": "Mumbai",
+    "posted_time": "16 hours ago",
+    "payment_type": "hourly",
+    "budget": 15553,
+    "proposals": 30
+  },
+  {
+    "id": 400,
+    "title": "Yoga Instructor",
+    "category": "Fitness",
+    "skills": [
+      "Yoga Instructor"
+    ],
+    "type": "freelance",
+    "platform": "Indeed",
+    "location": "Bangalore",
+    "posted_time": "19 hours ago",
+    "payment_type": "fixed",
+    "budget": 45059,
+    "proposals": 16
+  }
+]

@@ -71,7 +71,7 @@ function OnboardingComponent() {
     try {
       await api.post("/profile", formData);
       await refreshUser();
-      navigate({ to: "/" });
+      navigate({ to: "/sanskar" });
     } catch (error) {
       console.error("Onboarding failed", error);
     } finally {

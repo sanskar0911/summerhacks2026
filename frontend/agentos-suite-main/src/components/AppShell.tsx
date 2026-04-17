@@ -14,11 +14,11 @@ import { BrainOrb } from "./BrainOrb";
 import { TypingDots } from "./TypingDots";
 
 const nav = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
-  { to: "/opportunities", label: "Opportunities", icon: Sparkles },
-  { to: "/clients", label: "Clients", icon: Users },
-  { to: "/proposals", label: "Proposals", icon: FileText },
-  { to: "/insights", label: "Insights", icon: TrendingUp },
+  { to: "/sanskar", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/sanskar/opportunities", label: "Opportunities", icon: Sparkles },
+  { to: "/sanskar/clients", label: "Clients", icon: Users },
+  { to: "/sanskar/proposals", label: "Proposals", icon: FileText },
+  { to: "/sanskar/insights", label: "Insights", icon: TrendingUp },
 ] as const;
 
 import { useAuth } from "../lib/auth";

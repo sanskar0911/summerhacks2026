@@ -30,7 +30,7 @@ function LoginComponent() {
       } else {
         await register(email, password, name);
       }
-      navigate({ to: "/" });
+      navigate({ to: "/sanskar" });
     } catch (err: any) {
       setError(err.response?.data?.error || "Authentication failed");
     } finally {

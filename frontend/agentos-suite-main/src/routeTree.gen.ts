@@ -9,24 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ProposalsRouteImport } from './routes/proposals'
-import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as InsightsRouteImport } from './routes/insights'
-import { Route as ClientsRouteImport } from './routes/clients'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SanskarIndexRouteImport } from './routes/sanskar/index'
+import { Route as SanskarProposalsRouteImport } from './routes/sanskar/proposals'
+import { Route as SanskarOpportunitiesRouteImport } from './routes/sanskar/opportunities'
+import { Route as SanskarInsightsRouteImport } from './routes/sanskar/insights'
+import { Route as SanskarClientsRouteImport } from './routes/sanskar/clients'
 
-const ProposalsRoute = ProposalsRouteImport.update({
-  id: '/proposals',
-  path: '/proposals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OpportunitiesRoute = OpportunitiesRouteImport.update({
-  id: '/opportunities',
-  path: '/opportunities',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -37,106 +28,114 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InsightsRoute = InsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClientsRoute = ClientsRouteImport.update({
-  id: '/clients',
-  path: '/clients',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SanskarIndexRoute = SanskarIndexRouteImport.update({
+  id: '/sanskar/',
+  path: '/sanskar/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanskarProposalsRoute = SanskarProposalsRouteImport.update({
+  id: '/sanskar/proposals',
+  path: '/sanskar/proposals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanskarOpportunitiesRoute = SanskarOpportunitiesRouteImport.update({
+  id: '/sanskar/opportunities',
+  path: '/sanskar/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanskarInsightsRoute = SanskarInsightsRouteImport.update({
+  id: '/sanskar/insights',
+  path: '/sanskar/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanskarClientsRoute = SanskarClientsRouteImport.update({
+  id: '/sanskar/clients',
+  path: '/sanskar/clients',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/clients': typeof ClientsRoute
-  '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/opportunities': typeof OpportunitiesRoute
-  '/proposals': typeof ProposalsRoute
+  '/sanskar/clients': typeof SanskarClientsRoute
+  '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
+  '/sanskar/proposals': typeof SanskarProposalsRoute
+  '/sanskar/': typeof SanskarIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/clients': typeof ClientsRoute
-  '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/opportunities': typeof OpportunitiesRoute
-  '/proposals': typeof ProposalsRoute
+  '/sanskar/clients': typeof SanskarClientsRoute
+  '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
+  '/sanskar/proposals': typeof SanskarProposalsRoute
+  '/sanskar': typeof SanskarIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/clients': typeof ClientsRoute
-  '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/opportunities': typeof OpportunitiesRoute
-  '/proposals': typeof ProposalsRoute
+  '/sanskar/clients': typeof SanskarClientsRoute
+  '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
+  '/sanskar/proposals': typeof SanskarProposalsRoute
+  '/sanskar/': typeof SanskarIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/clients'
-    | '/insights'
     | '/login'
     | '/onboarding'
-    | '/opportunities'
-    | '/proposals'
+    | '/sanskar/clients'
+    | '/sanskar/insights'
+    | '/sanskar/opportunities'
+    | '/sanskar/proposals'
+    | '/sanskar/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/clients'
-    | '/insights'
     | '/login'
     | '/onboarding'
-    | '/opportunities'
-    | '/proposals'
+    | '/sanskar/clients'
+    | '/sanskar/insights'
+    | '/sanskar/opportunities'
+    | '/sanskar/proposals'
+    | '/sanskar'
   id:
     | '__root__'
     | '/'
-    | '/clients'
-    | '/insights'
     | '/login'
     | '/onboarding'
-    | '/opportunities'
-    | '/proposals'
+    | '/sanskar/clients'
+    | '/sanskar/insights'
+    | '/sanskar/opportunities'
+    | '/sanskar/proposals'
+    | '/sanskar/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ClientsRoute: typeof ClientsRoute
-  InsightsRoute: typeof InsightsRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
-  OpportunitiesRoute: typeof OpportunitiesRoute
-  ProposalsRoute: typeof ProposalsRoute
+  SanskarClientsRoute: typeof SanskarClientsRoute
+  SanskarInsightsRoute: typeof SanskarInsightsRoute
+  SanskarOpportunitiesRoute: typeof SanskarOpportunitiesRoute
+  SanskarProposalsRoute: typeof SanskarProposalsRoute
+  SanskarIndexRoute: typeof SanskarIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/proposals': {
-      id: '/proposals'
-      path: '/proposals'
-      fullPath: '/proposals'
-      preLoaderRoute: typeof ProposalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/opportunities': {
-      id: '/opportunities'
-      path: '/opportunities'
-      fullPath: '/opportunities'
-      preLoaderRoute: typeof OpportunitiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -151,20 +150,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insights': {
-      id: '/insights'
-      path: '/insights'
-      fullPath: '/insights'
-      preLoaderRoute: typeof InsightsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/clients': {
-      id: '/clients'
-      path: '/clients'
-      fullPath: '/clients'
-      preLoaderRoute: typeof ClientsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -172,17 +157,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sanskar/': {
+      id: '/sanskar/'
+      path: '/sanskar'
+      fullPath: '/sanskar/'
+      preLoaderRoute: typeof SanskarIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanskar/proposals': {
+      id: '/sanskar/proposals'
+      path: '/sanskar/proposals'
+      fullPath: '/sanskar/proposals'
+      preLoaderRoute: typeof SanskarProposalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanskar/opportunities': {
+      id: '/sanskar/opportunities'
+      path: '/sanskar/opportunities'
+      fullPath: '/sanskar/opportunities'
+      preLoaderRoute: typeof SanskarOpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanskar/insights': {
+      id: '/sanskar/insights'
+      path: '/sanskar/insights'
+      fullPath: '/sanskar/insights'
+      preLoaderRoute: typeof SanskarInsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanskar/clients': {
+      id: '/sanskar/clients'
+      path: '/sanskar/clients'
+      fullPath: '/sanskar/clients'
+      preLoaderRoute: typeof SanskarClientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ClientsRoute: ClientsRoute,
-  InsightsRoute: InsightsRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
-  OpportunitiesRoute: OpportunitiesRoute,
-  ProposalsRoute: ProposalsRoute,
+  SanskarClientsRoute: SanskarClientsRoute,
+  SanskarInsightsRoute: SanskarInsightsRoute,
+  SanskarOpportunitiesRoute: SanskarOpportunitiesRoute,
+  SanskarProposalsRoute: SanskarProposalsRoute,
+  SanskarIndexRoute: SanskarIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
