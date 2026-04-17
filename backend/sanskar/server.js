@@ -264,7 +264,7 @@ app.post('/api/opportunities/generate', authenticate, async (req, res) => {
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
     const prompt = `Generate 5 realistic job opportunities for a person with the following profile:
       Role: ${role}
       Skills: ${skills.join(', ')}
@@ -307,6 +307,49 @@ app.get('/api/insights', authenticate, async (req, res) => {
       insights = await Insight.findAll({ where: { userId: req.userId } });
   }
   res.json(insights);
+});
+
+// AI Proposal Generator Endpoint
+app.post('/api/proposals/generate', authenticate, async (req, res) => {
+  const { jobTitle, jobDescription, tags, tone } = req.body;
+  
+  if (!process.env.GEMINI_API_KEY) {
+    return res.status(503).json({ error: 'AI Service currently offline' });
+  }
+
+  try {
+    const user = await User.findByPk(req.userId);
+    const profile = JSON.parse(user.profile || '{}');
+    
+    // Using the exact pattern that works for opportunities
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+
+    const prompt = `You are the AgentOS Proposal Architect. 
+      Generate a persuasive project proposal based on these details:
+      
+      JOB: ${jobTitle}
+      DESCRIPTION: ${jobDescription}
+      TAGS: ${tags.join(", ")}
+      TONE: ${tone}
+      
+      SIGNATURE DETAILS (FREELANCER PROFILE):
+      Name: ${user.name}
+      Email: ${user.email}
+      Phone: ${profile.phone || "+91 98765 43210"}
+      Location: ${profile.location || "Mumbai, India"}
+      Bio: ${profile.bio || "Full-stack architectural specialist."}
+      Skills: ${profile.skills ? (Array.isArray(profile.skills) ? profile.skills.join(", ") : profile.skills) : "React, TypeScript, Node.js"}
+      
+      Output the proposal in clean, professional Markdown. Be concise but impactful.`;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    res.json({ text: response.text() });
+  } catch (error) {
+    console.error('AI Generation Error:', error.message);
+    res.status(500).json({ error: 'Failed to generate proposal: ' + error.message });
+  }
 });
 
 app.get('/api/stats', authenticate, async (req, res) => {
@@ -356,7 +399,7 @@ app.post('/api/proposals/refine', authenticate, async (req, res) => {
   if (!genAI) return res.status(503).json({ error: 'AI engine unavailable' });
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
     const prompt = `Rewrite this business proposal draft to be more ${tone || 'Professional'}. 
     Keep the core message but tighten the copy and make it more persuasive.
     Return ONLY the rewritten text.

@@ -11,6 +11,7 @@ import {
   Users,
   Zap,
   Activity,
+  Loader2,
 } from "lucide-react";
 import { BrainOrb } from "../components/BrainOrb";
 import { TypingDots } from "../components/TypingDots";

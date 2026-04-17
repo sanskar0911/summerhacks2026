@@ -62,8 +62,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <nav className="mt-6 flex flex-col gap-1">
             {nav.map((item) => {
               const Icon = item.icon;
-              const active =
-                item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
+              const active = pathname === item.to || (item.to !== "/sanskar" && pathname.startsWith(item.to));
               return (
                 <Link
                   key={item.to}
