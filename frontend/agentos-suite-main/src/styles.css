@@ -140,7 +140,16 @@
   }
 
   ::selection {
-    background: oklch(0.72 0.19 295 / 35%);
+    background: oklch(0.72 0.19 295 / 0.35);
+  }
+
+  select {
+    color-scheme: dark;
+  }
+
+  select option {
+    background-color: #1a1a24;
+    color: #ffffff;
   }
 }
 

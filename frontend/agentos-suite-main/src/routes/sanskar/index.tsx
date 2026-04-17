@@ -79,20 +79,25 @@ function Dashboard() {
   const [stats, setStats] = useState<any>(null);
   const [opportunities, setOpportunities] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [analysis, setAnalysis] = useState<any>(null);
+  const [analyzing, setAnalyzing] = useState(true);
   const navigate = useNavigate();
 
   const fetchDashboard = async () => {
     try {
-      const [statsRes, oppsRes] = await Promise.all([
+      const [statsRes, oppsRes, analysisRes] = await Promise.all([
         api.get("/stats"),
-        api.get("/opportunities")
+        api.get("/opportunities"),
+        api.post("/ai/analyze-business").catch(() => ({ data: null }))
       ]);
       setStats(statsRes.data);
       setOpportunities(oppsRes.data.slice(0, 6));
+      setAnalysis(analysisRes.data);
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
+      setAnalyzing(false);
     }
   };
 
@@ -101,10 +106,10 @@ function Dashboard() {
   }, []);
 
   const nextAction = {
-    title: "Send Proposal to CyberNexus",
-    reason: "Intelligence detected high-match (92%) opportunity. No leads scheduled for next week.",
-    confidence: 94,
-    link: "/sanskar/opportunities",
+    title: analysis?.recommended_action || "Syncing Market Intelligence...",
+    reason: analysis?.reason || "Aggregating signals from your active roster and market radar.",
+    confidence: analysis?.confidence_score || 0,
+    link: analysis?.recommended_action?.toLowerCase()?.includes("proposal") ? "/sanskar/proposals" : "/sanskar/opportunities",
     icon: Rocket
   };
 

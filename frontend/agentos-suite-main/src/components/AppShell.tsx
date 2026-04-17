@@ -9,9 +9,12 @@ import {
   Menu,
   X,
   Bell,
+  Cpu,
 } from "lucide-react";
 import { BrainOrb } from "./BrainOrb";
 import { TypingDots } from "./TypingDots";
+import { useAuth } from "../lib/auth";
+import { LogOut } from "lucide-react";
 
 const nav = [
   { to: "/sanskar", label: "Dashboard", icon: LayoutDashboard },
@@ -19,10 +22,9 @@ const nav = [
   { to: "/sanskar/clients", label: "Clients", icon: Users },
   { to: "/sanskar/proposals", label: "Proposals", icon: FileText },
   { to: "/sanskar/insights", label: "Insights", icon: TrendingUp },
+  { to: "/sanskar/chatbot", label: "Agent Oracle", icon: Cpu },
 ] as const;
 
-import { useAuth } from "../lib/auth";
-import { LogOut } from "lucide-react";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);

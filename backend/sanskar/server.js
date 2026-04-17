@@ -237,7 +237,8 @@ app.get('/api/opportunities', authenticate, async (req, res) => {
       time: o.posted_time || "Recent",
       score: Math.floor(Math.random() * (98 - 85) + 85),
       tags: Array.isArray(o.skills) ? o.skills : ["General"],
-      label: o.type === 'freelance' ? "🔥 Freelance" : "🏢 Agency"
+      label: o.type === 'freelance' ? "🔥 Freelance" : "🏢 Agency",
+      category: (o.title && typeof o.title === 'string' && o.title.toLowerCase().match(/house|clean|maintenance|security|guard|chef|cook|delivery|staff/) ? "Non-Technical" : "Technical")
     }));
 
     res.json(mappedOpps);
@@ -420,6 +421,51 @@ app.delete('/api/clients/:id', authenticate, async (req, res) => {
   if (!client) return res.status(404).json({ error: 'Client not found' });
   await client.destroy();
   res.json({ success: true });
+});
+
+app.post('/api/ai/analyze-business', authenticate, async (req, res) => {
+  if (!genAI) return res.status(503).json({ error: 'AI engine unavailable' });
+
+  try {
+    const user = await User.findByPk(req.userId, {
+      include: [
+        { model: Profile, as: 'profile' },
+        { model: Client, as: 'clients' },
+        { model: Proposal, as: 'proposals' }
+      ]
+    });
+
+    const context = {
+      profile: user.profile,
+      clients: user.clients.map(c => ({ name: c.name, status: c.status, totalValue: c.totalValue })),
+      proposals: user.proposals.map(p => ({ title: p.title, status: p.status, value: p.value, clientName: p.clientName }))
+    };
+
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    const prompt = `You are the AgentOS Freelance Command Centre. 
+      Analyze this freelancer's data and detect risks or opportunities. 
+      
+      DATA: ${JSON.stringify(context)}
+      
+      STRICT JSON OUTPUT:
+      {
+        "risk_level": "Low | Medium | High | Critical",
+        "reason": "Why this level",
+        "revenue_at_risk": "Estimated ₹ amount",
+        "recommended_action": "What should be done",
+        "auto_message": "Ready-to-send message",
+        "confidence_score": "0-100"
+      }
+      Respond ONLY with JSON. No formatting.`;
+
+    const result = await model.generateContent(prompt);
+    let text = result.response.text().trim();
+    if (text.startsWith('```json')) text = text.replace(/```json|```/g, '');
+    res.json(JSON.parse(text));
+  } catch (error) {
+    console.error('Command Centre Analysis Failure:', error);
+    res.status(500).json({ error: 'Critical failure in intelligence engine' });
+  }
 });
 
 app.post('/api/send-email', authenticate, async (req, res) => {

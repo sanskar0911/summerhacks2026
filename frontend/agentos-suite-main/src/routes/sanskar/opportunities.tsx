@@ -32,14 +32,16 @@ function Opportunities() {
   const [opps, setOpps] = useState<any[]>([]);
   const [scanning, setScanning] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [minScore, setMinScore] = useState(0);
+  const [locationType, setLocationType] = useState("All");
+  const [labelType, setLabelType] = useState("All");
+  const [categoryType, setCategoryType] = useState("All");
   const navigate = useNavigate();
 
   const fetchOpps = async () => {
     try {
       const res = await api.get("/opportunities");
-      console.log('--- MARKET RADAR DATA FETCHED ---');
-      console.log('Signal Volume:', res.data.length);
-      console.log('Sample Signal:', res.data[0]);
       setOpps(res.data);
     } catch (err) {
       console.error('--- MARKET RADAR SIGNAL LOSS ---', err);
@@ -51,7 +53,6 @@ function Opportunities() {
   const handleScan = async () => {
     setScanning(true);
     try {
-      // Simulate real-time scanning
       await new Promise(r => setTimeout(r, 2000));
       await fetchOpps();
     } finally {
@@ -74,6 +75,19 @@ function Opportunities() {
     fetchOpps();
   }, []);
 
+  const filteredOpps = opps.filter(o => {
+    const matchesSearch = o.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                         o.company.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesScore = (o.score || o.match) >= minScore;
+    const matchesLocation = locationType === "All" || 
+                           (locationType === "Remote" ? o.location.toLowerCase().includes("remote") : !o.location.toLowerCase().includes("remote"));
+    const matchesLabel = labelType === "All" || 
+                        (labelType === "Freelance" ? o.label?.includes("Freelance") : o.label?.includes("Agency"));
+    const matchesCategory = categoryType === "All" || o.category === categoryType;
+    
+    return matchesSearch && matchesScore && matchesLocation && matchesLabel && matchesCategory;
+  });
+
   return (
     <div className="space-y-8 pb-10">
       <PageHeader
@@ -92,24 +106,93 @@ function Opportunities() {
         }
       />
 
-      {/* FILTER & STATS STRIP */}
-      <div className="flex flex-col md:flex-row gap-4 items-center justify-between glass-strong p-3 rounded-[2rem] border border-white/10">
-        <div className="relative w-full md:max-w-md">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search market signals…"
-            className="w-full bg-white/5 border-none rounded-2xl py-3.5 pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all font-medium"
-          />
+      {/* FILTER & STATS STRIP - ENHANCED COLOR SCHEME */}
+      <div className="flex flex-col gap-6 glass-strong p-6 rounded-[2.5rem] border border-cool/20 shadow-glow-soft">
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="relative w-full md:max-w-md group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-cool group-focus-within:scale-110 transition-transform" />
+            <input
+              type="text"
+              placeholder="Search market signals…"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full bg-cool/5 border border-cool/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-cool/30 transition-all font-medium placeholder:text-cool/30"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2 uppercase text-[10px] font-bold tracking-[0.2em]">
+             <div className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-cool/10 text-cool border border-cool/20">
+                <Activity className="h-3.5 w-3.5" />
+                {filteredOpps.length} Signals Active
+             </div>
+             <div className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-success/10 text-success border border-success/20">
+                <TrendingUp className="h-3.5 w-3.5" />
+                +14% Demand
+             </div>
+          </div>
         </div>
-        <div className="flex gap-3 w-full md:w-auto px-2 uppercase text-[10px] font-bold tracking-[0.2em] text-muted-foreground">
-           <div className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 border border-white/5">
-              <Activity className="h-3.5 w-3.5 text-success" />
-              1,420 Active Signals
+
+        {/* MULTI-CRITERIA FILTERS - COLORED THEME */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+           <div className="space-y-2">
+              <label className="text-[9px] uppercase tracking-widest font-bold text-cool ml-2">Min Match</label>
+              <select 
+                value={minScore} 
+                onChange={(e) => setMinScore(Number(e.target.value))}
+                className="w-full glass bg-cool/5 border border-cool/10 rounded-xl px-4 py-2.5 text-xs font-bold text-foreground focus:outline-none appearance-none cursor-pointer hover:bg-cool/10 transition-colors"
+              >
+                 <option value={0}>Any Score</option>
+                 <option value={80}>80%+ Match</option>
+                 <option value={90}>90%+ Match</option>
+                 <option value={95}>95%+ Match</option>
+              </select>
            </div>
-           <div className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 border border-white/5">
-              <TrendingUp className="h-3.5 w-3.5 text-primary" />
-              +14% Demand Spike
+           
+           <div className="space-y-2">
+              <label className="text-[9px] uppercase tracking-widest font-bold text-cool ml-2">Domain</label>
+              <select 
+                value={categoryType} 
+                onChange={(e) => setCategoryType(e.target.value)}
+                className="w-full glass bg-cool/5 border border-cool/10 rounded-xl px-4 py-2.5 text-xs font-bold text-foreground focus:outline-none appearance-none cursor-pointer hover:bg-cool/10 transition-colors"
+              >
+                 <option value="All">All Domains</option>
+                 <option value="Technical">Technical (AI/Dev)</option>
+                 <option value="Non-Technical">Non-Tech (Services)</option>
+              </select>
+           </div>
+
+           <div className="space-y-2">
+              <label className="text-[9px] uppercase tracking-widest font-bold text-cool ml-2">Location</label>
+              <select 
+                value={locationType} 
+                onChange={(e) => setLocationType(e.target.value)}
+                className="w-full glass bg-cool/5 border border-cool/10 rounded-xl px-4 py-2.5 text-xs font-bold text-foreground focus:outline-none appearance-none cursor-pointer hover:bg-cool/10 transition-colors"
+              >
+                 <option value="All">All Locations</option>
+                 <option value="Remote">Remote Only</option>
+                 <option value="On-site">On-site / Hybrid</option>
+              </select>
+           </div>
+
+           <div className="space-y-2">
+              <label className="text-[9px] uppercase tracking-widest font-bold text-cool ml-2">Contract</label>
+              <select 
+                value={labelType} 
+                onChange={(e) => setLabelType(e.target.value)}
+                className="w-full glass bg-cool/5 border border-cool/10 rounded-xl px-4 py-2.5 text-xs font-bold text-foreground focus:outline-none appearance-none cursor-pointer hover:bg-cool/10 transition-colors"
+              >
+                 <option value="All">All Types</option>
+                 <option value="Freelance">Freelance</option>
+                 <option value="Agency">Agency / Full-time</option>
+              </select>
+           </div>
+           
+           <div className="flex items-end pb-0.5">
+              <button 
+                onClick={() => { setSearchTerm(""); setMinScore(0); setLocationType("All"); setLabelType("All"); setCategoryType("All"); }}
+                className="w-full h-10 rounded-xl border border-cool/20 hover:bg-cool/10 text-cool text-[9px] font-bold uppercase tracking-widest transition-all"
+              >
+                Reset Radar
+              </button>
            </div>
         </div>
       </div>
@@ -119,7 +202,7 @@ function Opportunities() {
           Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-[280px] rounded-[2.5rem] glass animate-pulse border border-white/5" />
           ))
-        ) : opps.map((o, i) => (
+        ) : filteredOpps.map((o, i) => (
           <motion.article 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

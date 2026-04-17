@@ -21,6 +21,7 @@ function Clients() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isAdding, setIsAdding] = useState(false);
   const [newClient, setNewClient] = useState({ name: "", email: "", contact: "", status: "Active" as any });
+  const [analysis, setAnalysis] = useState<any>(null);
 
   const fetchClients = async () => {
     try {
@@ -33,8 +34,18 @@ function Clients() {
     }
   };
 
+  const fetchAnalysis = async () => {
+    try {
+      const res = await api.post("/ai/analyze-business");
+      setAnalysis(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
     fetchClients();
+    fetchAnalysis();
   }, []);
 
   const handleAddClient = async (e: React.FormEvent) => {
@@ -44,6 +55,7 @@ function Clients() {
       setIsAdding(false);
       setNewClient({ name: "", email: "", contact: "", status: "Active" });
       fetchClients();
+      fetchAnalysis(); // Refresh analysis after adding a client
     } catch (err) {
       console.error(err);
     }
@@ -54,6 +66,7 @@ function Clients() {
     try {
       await api.delete(`/clients/${id}`);
       fetchClients();
+      fetchAnalysis(); // Refresh analysis after deleting a client
     } catch (err) {
       console.error(err);
     }
@@ -137,9 +150,9 @@ function Clients() {
                  <div className="space-y-2">
                    <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary ml-1">Initial Status</label>
                    <select value={newClient.status} onChange={e => setNewClient({...newClient, status: e.target.value as any})} className="w-full glass bg-white/5 border border-white/10 rounded-2xl p-5 text-sm font-bold focus:outline-none appearance-none">
-                      <option>Active</option>
-                      <option>Pending</option>
-                      <option>Inactive</option>
+                       <option>Active</option>
+                       <option>Pending</option>
+                       <option>Inactive</option>
                    </select>
                  </div>
                </div>
@@ -221,15 +234,22 @@ function Clients() {
       {/* RELATIONSHIP HEALTH INSIGHT */}
       <section className="glass rounded-[2rem] p-8 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
          <div className="flex items-center gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-warning/10 flex items-center justify-center text-warning border border-warning/20">
+            <div className={`h-12 w-12 rounded-2xl ${analysis?.risk_level === 'Critical' || analysis?.risk_level === 'High' ? 'bg-destructive/10 text-destructive border-destructive/20' : 'bg-warning/10 text-warning border-warning/20'} flex items-center justify-center border`}>
                <Clock className="h-6 w-6" />
             </div>
             <div>
-               <h4 className="text-base font-bold tracking-tight">Relationship Drift Detected</h4>
-               <p className="text-xs text-muted-foreground font-medium">3 inactive signals in Northwind Co roster. Suggested re-engagement in 48h.</p>
+               <h4 className="text-base font-bold tracking-tight">{analysis?.risk_level ? `${analysis.risk_level} Risk Detected` : 'Monitoring Roster Signal...'}</h4>
+               <p className="text-xs text-muted-foreground font-medium">{analysis?.reason || 'Scanning for relationship drift and engagement gaps.'}</p>
             </div>
          </div>
-         <button className="whitespace-nowrap rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all">
+         <button 
+           onClick={() => {
+             if (analysis?.auto_message) {
+               alert(`Auto-drafting re-engagement sequence:\n\n${analysis.auto_message}`);
+             }
+           }}
+           className="whitespace-nowrap rounded-xl bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
+         >
             Execute Re-Connect
          </button>
       </section>
