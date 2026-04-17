@@ -22,7 +22,17 @@ const genAI = process.env.GEMINI_API_KEY ? new GoogleGenerativeAI(process.env.GE
 app.use(cors());
 app.use(bodyParser.json());
 
+// Global Request Logger
+app.use((req, res, next) => {
+  console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
+  next();
+});
+
 // Nodemailer Transport
+console.log('--- MAIL ENGINE INITIALIZING ---');
+console.log('Identity:', process.env.EMAIL);
+if (process.env.APP_PASSWORD) console.log('Secret Status: LOADED (Length: ' + process.env.APP_PASSWORD.length + ')');
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -191,39 +201,42 @@ app.get('/api/opportunities', authenticate, async (req, res) => {
     const pathsToTry = [
       path.join(__dirname, 'data', 'opportunities.json'),
       path.join(process.cwd(), 'sanskar', 'data', 'opportunities.json'),
+      path.join(process.cwd(), 'backend', 'sanskar', 'data', 'opportunities.json'),
       'c:\\Users\\sanskar jagdish\\OneDrive\\Desktop\\summerhacks\\backend\\sanskar\\data\\opportunities.json'
     ];
 
     let filePath = null;
+    console.log('--- MARKET RADAR DATA SYNC ---');
     for (const p of pathsToTry) {
-      if (fs.existsSync(p)) {
+      const exists = fs.existsSync(p);
+      console.log(`Path [${exists ? 'FOUND' : 'MISSING'}]: ${p}`);
+      if (exists) {
         filePath = p;
         break;
       }
     }
 
-    console.log('--- OPPORTUNITY DATA SYNC ---');
     if (!filePath) {
-      console.warn('⚠️ No JSON signal found. Falling back to DB Intelligence.');
+      console.warn('⚠️ All JSON paths failed. Falling back to DB Intelligence.');
       const opps = await Opportunity.findAll({ limit: 50 });
       return res.json(opps);
     }
 
-    console.log('✅ Synchronized with:', filePath);
+    console.log('✅ Synchronized with live signal source.');
     const data = fs.readFileSync(filePath, 'utf8');
     const rawOpps = JSON.parse(data);
-    console.log(`✅ Mapping ${rawOpps.length} active signals to UI.`);
+    console.log(`✅ Volume: ${rawOpps.length} items.`);
 
     const mappedOpps = rawOpps.map(o => ({
       id: o.id,
       title: o.title || "Untitled Opportunity",
       company: o.platform || o.company || "Direct Client",
-      description: `${o.title} in ${o.location}. ${o.description || 'Deep scan match found.'}`,
+      description: `${o.title} in ${o.location}. Deep matched from signal roster.`,
       rate: o.salary || (o.budget ? `₹${o.budget.toLocaleString()}` : "₹15,000+"),
       location: o.location || "Remote",
       time: o.posted_time || "Recent",
       score: Math.floor(Math.random() * (98 - 85) + 85),
-      tags: o.skills || (o.tags ? o.tags : ["General"]),
+      tags: Array.isArray(o.skills) ? o.skills : ["General"],
       label: o.type === 'freelance' ? "🔥 Freelance" : "🏢 Agency"
     }));
 
@@ -373,24 +386,31 @@ app.post('/api/send-email', authenticate, async (req, res) => {
     return res.status(503).json({ error: 'Email service not configured' });
   }
 
-  const mailOptions = {
-    from: `"AgentOS Intelligence" <${process.env.EMAIL}>`,
-    to,
-    subject,
-    html: `
-      <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-        <h2 style="color: #6366f1;">AgentOS Proposal</h2>
-        <div style="white-space: pre-wrap; color: #333; line-height: 1.6;">${message}</div>
-        <hr style="margin-top: 30px; border: none; border-top: 1px solid #eee;" />
-        <p style="font-size: 12px; color: #999;">Sent via <a href="#" style="color: #6366f1;">AgentOS</a> — Autonomous Business Operating System</p>
-      </div>
-    `
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
+    const user = await User.findByPk(req.userId);
+    const recipientEmail = user.email; // AI-forced: Always send to registered user for this phase
+
+    console.log(`--- ATTEMPTING DISPATCH ---`);
+    console.log(`From: ${process.env.EMAIL}`);
+    console.log(`To: ${recipientEmail}`);
+
+    const mailOptions = {
+      from: `"AgentOS Intelligence" <${process.env.EMAIL}>`,
+      to: recipientEmail,
+      subject,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+          <h2 style="color: #6366f1;">AgentOS Proposal</h2>
+          <div style="white-space: pre-wrap; color: #333; line-height: 1.6;">${message}</div>
+          <hr style="margin-top: 30px; border: none; border-top: 1px solid #eee;" />
+          <p style="font-size: 12px; color: #999;">Sent via <a href="#" style="color: #6366f1;">AgentOS</a> — Autonomous Business Operating System</p>
+        </div>
+      `
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ SMTP SUCCESS:', info.messageId);
     
-    // Update proposal status if ID provided
     if (proposalId) {
       const proposal = await Proposal.findOne({ where: { id: proposalId, userId: req.userId } });
       if (proposal) await proposal.update({ status: 'Sent' });
@@ -398,8 +418,12 @@ app.post('/api/send-email', authenticate, async (req, res) => {
 
     res.json({ success: true, feedback: '✅ Proposal sent successfully' });
   } catch (error) {
-    console.error('Email Error:', error);
-    res.status(500).json({ error: 'Failed to send email' });
+    console.error('--- SMTP CRITICAL FAILURE ---');
+    console.error('Error Name:', error.name);
+    console.error('Error Msg:', error.message);
+    console.error('Error Code:', error.code);
+    if (error.response) console.error('SMTP Response:', error.response);
+    res.status(500).json({ error: `Email failed: ${error.message}` });
   }
 });
 

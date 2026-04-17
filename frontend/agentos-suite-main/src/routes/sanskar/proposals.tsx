@@ -99,8 +99,7 @@ Would love to discuss how I can add value.
   };
 
   const handleSend = async () => {
-    const emailTo = prompt("Enter recipient email address:", context?.company ? `${context.company.toLowerCase().replace(/\s/g, '')}@example.com` : "contact@client.com");
-    if (!emailTo) return;
+    // AI-Automated routing: Sending to registered user email
 
     setSending(true);
     try {
@@ -108,8 +107,7 @@ Would love to discuss how I can add value.
       const draft = await handleSave();
       
       const res = await api.post("/send-email", {
-        to: emailTo,
-        subject: `Proposal: ${context?.title || "Project Services"}`,
+        subject: `Proposal Architect: ${context?.title || "Project Services"}`,
         message: text,
         proposalId: draft?.id
       });
