@@ -37,9 +37,12 @@ function Opportunities() {
   const fetchOpps = async () => {
     try {
       const res = await api.get("/opportunities");
+      console.log('--- MARKET RADAR DATA FETCHED ---');
+      console.log('Signal Volume:', res.data.length);
+      console.log('Sample Signal:', res.data[0]);
       setOpps(res.data);
     } catch (err) {
-      console.error(err);
+      console.error('--- MARKET RADAR SIGNAL LOSS ---', err);
     } finally {
       setLoading(false);
     }

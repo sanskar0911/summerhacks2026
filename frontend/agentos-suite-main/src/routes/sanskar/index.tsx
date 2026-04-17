@@ -88,7 +88,7 @@ function Dashboard() {
         api.get("/opportunities")
       ]);
       setStats(statsRes.data);
-      setOpportunities(oppsRes.data.slice(0, 3));
+      setOpportunities(oppsRes.data.slice(0, 6));
     } catch (err) {
       console.error(err);
     } finally {
