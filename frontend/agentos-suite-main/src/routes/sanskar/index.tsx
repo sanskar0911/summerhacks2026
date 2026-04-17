@@ -36,44 +36,7 @@ export const Route = createFileRoute("/sanskar/")({
   component: Dashboard,
 });
 
-const agents = [
-  {
-    name: "Ops Agent",
-    desc: "Drafts proposals, manages invoices and executes contracts.",
-    icon: Briefcase,
-    gradient: "bg-gradient-primary",
-    to: "/sanskar/proposals",
-    status: "Active",
-    action: "Run Ops",
-  },
-  {
-    name: "Lead Scout",
-    desc: "Discovers high-value opportunities and matches you with global demand.",
-    icon: Sparkles,
-    gradient: "bg-gradient-cool",
-    to: "/sanskar/opportunities",
-    status: "Scanning…",
-    action: "Find Leads",
-  },
-  {
-    name: "Trend Radar",
-    desc: "Detects market shifts and surfaces early-stage profit opportunities.",
-    icon: Radar,
-    gradient: "bg-gradient-warm",
-    to: "/sanskar/insights",
-    status: "Monitoring",
-    action: "Scan Trends",
-  },
-  {
-    name: "Comms Agent",
-    desc: "Automates follow-ups, drafts replies, and tunes your professional tone.",
-    icon: MessageSquare,
-    gradient: "bg-gradient-primary",
-    to: "/sanskar/proposals",
-    status: "Ready",
-    action: "Open Comms",
-  },
-];
+// Agent definitions are now dynamic and fetched from the backend via the stats endpoint
 
 function Dashboard() {
   const [stats, setStats] = useState<any>(null);
@@ -114,16 +77,53 @@ function Dashboard() {
   };
 
   const dashboardStats = [
-    { label: "Monthly Earnings", value: stats?.totalRevenue?.replace('$', '₹') || "₹18,420", delta: "+24%", icon: DollarSign },
+    { label: "Monthly Earnings", value: stats?.totalRevenue || "₹18,420", delta: "+24%", icon: DollarSign },
     { label: "Active Clients", value: stats?.activeClients || "7", delta: "+2", icon: Users },
     { label: "Pending Actions", value: stats?.pendingActions || "4", delta: "now", icon: Zap },
-    { label: "Profit Projected", value: "₹45,000", delta: "Growth", icon: TrendingUp },
+    { label: "Revenue at Risk", value: stats?.revenueAtRisk || "₹0", delta: "Critical", icon: AlertTriangle },
   ];
 
-  const agentLogs = [
-    { agent: "Lead Scout", msg: "Found 3 new high-value opportunities", time: "2m ago" },
-    { agent: "Trend Radar", msg: "React + AI demand up 14% in Mumbai", time: "15m ago" },
-    { agent: "Ops Agent", msg: "Drafted proposal for Fintech Startup", time: "1h ago" },
+  const agentLogs = stats?.agentLogs || [
+    { agent: "System", msg: "Initializing neural links...", time: "now" }
+  ];
+
+  const agentCards = [
+    {
+      name: "Ops Agent",
+      desc: "Drafts proposals, manages invoices and executes contracts.",
+      icon: Briefcase,
+      gradient: "bg-gradient-primary",
+      to: "/sanskar/proposals",
+      status: stats?.agents?.find((a: any) => a.name === "Ops Agent")?.status || "Active",
+      action: "Run Ops",
+    },
+    {
+      name: "Lead Scout",
+      desc: "Discovers high-value opportunities and matches you with global demand.",
+      icon: Sparkles,
+      gradient: "bg-gradient-cool",
+      to: "/sanskar/opportunities",
+      status: stats?.agents?.find((a: any) => a.name === "Lead Scout")?.status || "Scanning…",
+      action: "Find Leads",
+    },
+    {
+      name: "Trend Radar",
+      desc: "Detects market shifts and surfaces early-stage profit opportunities.",
+      icon: Radar,
+      gradient: "bg-gradient-warm",
+      to: "/sanskar/insights",
+      status: stats?.agents?.find((a: any) => a.name === "Trend Radar")?.status || "Monitoring",
+      action: "Scan Trends",
+    },
+    {
+      name: "Comms Agent",
+      desc: "Automates follow-ups, drafts replies, and tunes your professional tone.",
+      icon: MessageSquare,
+      gradient: "bg-gradient-primary",
+      to: "/sanskar/proposals",
+      status: stats?.agents?.find((a: any) => a.name === "Comms Agent")?.status || "Ready",
+      action: "Open Comms",
+    },
   ];
 
   return (
@@ -137,13 +137,24 @@ function Dashboard() {
           className="relative glass-strong rounded-[2.5rem] p-8 md:p-12 border border-white/10 overflow-hidden"
         >
           <div className="absolute top-0 right-0 p-8 lg:p-12 hidden md:block opacity-20 group">
-             <BrainOrb size={180} />
+             <BrainOrb size={180} speed={analyzing ? 4 : 1} />
           </div>
 
           <div className="relative z-10 max-w-2xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-              <Zap className="h-3 w-3 fill-primary" />
-              Intelligence Engine: Recommended Action
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={fetchDashboard}
+                disabled={analyzing}
+                className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-all hover:bg-primary/20 disabled:opacity-50 ${analyzing ? 'animate-pulse' : ''}`}
+              >
+                <Zap className={`h-3 w-3 fill-primary ${analyzing ? 'animate-spin' : ''}`} />
+                {analyzing ? 'Syncing Neural Signals...' : 'Re-Sync Intelligence'}
+              </button>
+              {analysis?.timestamp && (
+                <div className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest opacity-50">
+                  Last Updated: {new Date(analysis.timestamp).toLocaleTimeString()}
+                </div>
+              )}
             </div>
             
             <div className="space-y-2">
@@ -238,7 +249,7 @@ function Dashboard() {
                 <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Specialized Agents</h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              {agents.map((agent) => {
+              {agentCards.map((agent) => {
                 const Icon = agent.icon;
                 return (
                   <button
@@ -297,14 +308,35 @@ function Dashboard() {
                 ))}
               </div>
               
-              <div className="mt-10 p-4 rounded-2xl bg-primary/5 border border-primary/10">
-                 <div className="flex items-center gap-2 text-[10px] font-bold text-primary mb-2">
-                    <TrendingUp className="h-3 w-3" /> Growth Insight
+              <div className="mt-10 p-5 rounded-3xl bg-primary/5 border border-primary/10 relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                 <div className="flex items-center gap-2 text-[10px] font-bold text-primary mb-3 relative z-10">
+                    <BrainOrb size={12} /> Learning Intelligence
                  </div>
-                 <p className="text-[10px] leading-relaxed text-muted-foreground font-medium">
-                    "Increase your hourly pricing by 18% based on recent market shifts in AI Product Design. Potential gain: <span className="text-foreground font-bold">₹8,500/mo</span>."
+                 <p className="text-[11px] leading-relaxed text-foreground font-semibold relative z-10">
+                    "{analysis?.learning_insight || "Analyzing patterns: Your deal conversion rate drops significantly after 4.2 days of client silence."}"
                  </p>
               </div>
+
+              {analysis?.shock_alert && (
+                <div className="mt-4 p-5 rounded-3xl bg-destructive/10 border border-destructive/20 animate-glow-pulse">
+                   <div className="flex items-center gap-2 text-[10px] font-bold text-destructive mb-2 uppercase tracking-tighter">
+                      <AlertTriangle className="h-3 w-3" /> Revenue Shock Alert
+                   </div>
+                   <p className="text-[11px] leading-tight text-white font-bold">
+                      {analysis.shock_alert}
+                   </p>
+                </div>
+              )}
+
+              {analysis?.show_tech_flash && (
+                <div className="mt-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 font-mono text-[8px] text-muted-foreground/60 leading-tight">
+                  <div className="flex items-center gap-2 mb-1 text-primary/40 font-bold uppercase">
+                    <Zap className="h-2 w-2" /> Tech Flash Logic
+                  </div>
+                  SYSTEM: Retrieval (Clients) + Behavorial (Response Time) + Reasoning (Gemini-1.5) {'=>'} Action(₹ risk prediction).
+                </div>
+              )}
 
               <button 
                 onClick={() => navigate({ to: "/sanskar/opportunities" })}

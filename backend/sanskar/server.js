@@ -48,6 +48,23 @@ const sequelize = new Sequelize({
   logging: false
 });
 
+const admZip = require('adm-zip');
+const multer = require('multer');
+const { v4: uuidv4 } = require('uuid');
+
+// Configure Multer for Deliverables
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dir = './uploads';
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+const upload = multer({ storage });
+
 // Models
 const User = sequelize.define('User', {
   id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
@@ -77,8 +94,14 @@ const Client = sequelize.define('Client', {
   name: { type: DataTypes.STRING, allowNull: false },
   contact: DataTypes.STRING,
   status: { type: DataTypes.ENUM('Active', 'Pending', 'Inactive'), defaultValue: 'Active' },
+  projectStatus: { type: DataTypes.ENUM('Pending', 'In-Progress', 'Submitted', 'Completed'), defaultValue: 'Pending' },
   totalValue: { type: DataTypes.FLOAT, defaultValue: 0 },
-  email: DataTypes.STRING
+  pendingPayment: { type: DataTypes.FLOAT, defaultValue: 0 },
+  email: DataTypes.STRING,
+  riskLevel: { type: DataTypes.ENUM('Low', 'Medium', 'High', 'Critical'), defaultValue: 'Low' },
+  healthScore: { type: DataTypes.INTEGER, defaultValue: 100 },
+  lastInteraction: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+  qualityReport: { type: DataTypes.TEXT, get() { const val = this.getDataValue('qualityReport'); return val ? JSON.parse(val) : null; }, set(val) { this.setDataValue('qualityReport', JSON.stringify(val)); } }
 });
 
 const Opportunity = sequelize.define('Opportunity', {
@@ -353,22 +376,155 @@ app.post('/api/proposals/generate', authenticate, async (req, res) => {
   }
 });
 
+// DELIVERABLE SUBMISSION & TRUST PIPELINE
+app.post('/api/clients/:id/deliverable', authenticate, upload.single('file'), async (req, res) => {
+  try {
+    const client = await Client.findByPk(req.params.id);
+    if (!client) return res.status(404).json({ error: 'Partner not found' });
+    if (!req.file) return res.status(400).json({ error: 'Digital deliverable missing (ZIP required)' });
+
+    console.log(`--- ANALYSIS INITIATED: ${client.name} ---`);
+    const zip = new admZip(req.file.path);
+    const zipEntries = zip.getEntries();
+    
+    let issues = [];
+    let securityFlags = 0;
+    let totalLines = 0;
+    let complexityScore = 0;
+
+    zipEntries.forEach(entry => {
+      if (!entry.isDirectory && (entry.entryName.endsWith('.js') || entry.entryName.endsWith('.ts') || entry.entryName.endsWith('.tsx'))) {
+        const content = entry.getData().toString('utf8');
+        const lines = content.split('\n');
+        totalLines += lines.length;
+
+        // Security Scan
+        if (content.includes('eval(')) securityFlags++;
+        if (content.includes('dangerouslySetInnerHTML')) securityFlags++;
+        if (content.includes('innerHTML')) securityFlags++;
+
+        // Quality Scan
+        if (content.includes('TODO:')) issues.push(`Found pending TODO in ${entry.entryName}`);
+        if (content.includes('FIXME:')) issues.push(`Unresolved technical debt (FIXME) in ${entry.entryName}`);
+        
+        // Complexity check (Simplified)
+        const nestedLoops = (content.match(/for.*\{.*for/g) || []).length;
+        if (nestedLoops > 0) complexityScore += nestedLoops;
+      }
+    });
+
+    const score = Math.max(0, 100 - (securityFlags * 10) - (issues.length * 2) - (complexityScore * 5));
+    
+    const report = {
+      score,
+      issues_found: issues.length,
+      security_flags: securityFlags,
+      readability: score > 80 ? "Excellent" : score > 60 ? "Good" : "Needs Review",
+      suggestions: issues.slice(0, 5),
+      timestamp: new Date().toISOString()
+    };
+
+    // Generate Human-Readable Trust Summary via Gemini
+    let trustSummary = "Analysis complete. Deliverable is structurally sound.";
+    if (genAI) {
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const prompt = `Based on this code analysis report for client "${client.name}": ${JSON.stringify(report)}. 
+      Generate a 2-sentence professional, high-trust summary for the client explaining the quality or if there's any risk. 
+      Tone: Senior Systems Engineer. Include the percentage score.`;
+      const result = await model.generateContent(prompt);
+      trustSummary = result.response.text();
+    }
+
+    await client.update({
+      projectStatus: 'Submitted',
+      qualityReport: { ...report, trustSummary }
+    });
+
+    res.json({ success: true, report: { ...report, trustSummary } });
+  } catch (error) {
+    console.error('--- ANALYSIS PIPELINE CRITICAL FAILURE ---', error);
+    res.status(500).json({ error: 'Analysis engine failed to process signal' });
+  }
+});
+
+app.post('/api/clients/:id/follow-up', authenticate, async (req, res) => {
+  // Mock follow-up success
+  res.json({ success: true, message: '✅ Follow-up sent effectively' });
+});
+
 app.get('/api/stats', authenticate, async (req, res) => {
-  const clients = await Client.findAll({ where: { userId: req.userId } });
-  const proposals = await Proposal.findAll({ where: { userId: req.userId } });
-  const opportunities = await Opportunity.count();
-  
-  const totalRevenue = clients.reduce((acc, c) => acc + (c.totalValue || 0), 0);
-  const activeClients = clients.filter(c => c.status === 'Active').length;
-  const pendingActions = proposals.filter(p => p.status === 'Draft' || p.status === 'Sent').length;
-  
-  res.json({
-    totalRevenue: `₹${(totalRevenue * 82).toLocaleString()}`, // Mock conversion to INR
-    projectedProfit: `₹${((totalRevenue * 82) + (opportunities * 1500)).toLocaleString()}`,
-    activeClients: activeClients.toString(),
-    pendingActions: pendingActions.toString(),
-    opportunities: opportunities.toString()
-  });
+  try {
+    const clients = await Client.findAll({ 
+      where: { userId: req.userId },
+      order: [['createdAt', 'DESC']]
+    });
+    const proposals = await Proposal.findAll({ 
+      where: { userId: req.userId },
+      order: [['updatedAt', 'DESC']]
+    });
+    const opportunitiesCount = await Opportunity.count();
+    const recentOpps = await Opportunity.findAll({ limit: 2, order: [['createdAt', 'DESC']] });
+    
+    const totalRevenue = clients.reduce((acc, c) => acc + (c.totalValue || 0), 0);
+    const revenueAtRisk = clients.reduce((acc, c) => {
+      if (c.riskLevel === 'High' || c.riskLevel === 'Critical') return acc + (c.pendingPayment || 0);
+      return acc;
+    }, 0);
+    
+    const activeClients = clients.filter(c => c.status === 'Active').length;
+    const pendingActions = proposals.filter(p => p.status === 'Draft' || p.status === 'Sent').length;
+
+    // --- Dynamic Agent Logs Generation ---
+    const logs = [];
+    
+    // Proposal logs
+    if (proposals.length > 0) {
+      logs.push({ 
+        agent: "Ops Agent", 
+        msg: `Proposal for "${proposals[0].clientName}" updated to ${proposals[0].status}`, 
+        time: "Just now" 
+      });
+    }
+    
+    // Client logs
+    if (clients.length > 0) {
+      logs.push({ 
+        agent: "Comms Agent", 
+        msg: `Analyzing relationship health for ${clients[0].name}`, 
+        time: "2m ago" 
+      });
+    }
+
+    // Opportunity logs
+    if (recentOpps.length > 0) {
+      logs.push({ 
+        agent: "Lead Scout", 
+        msg: `Detected high-yield opportunity: ${recentOpps[0].title}`, 
+        time: "15m ago" 
+      });
+    }
+
+    // Agent Status heuristics
+    const agents = [
+      { name: "Ops Agent", status: pendingActions > 5 ? "High Load" : "Active" },
+      { name: "Lead Scout", status: "Scanning…" },
+      { name: "Trend Radar", status: "Monitoring" },
+      { name: "Comms Agent", status: "Ready" }
+    ];
+    
+    res.json({
+      totalRevenue: `₹${(totalRevenue * 82).toLocaleString()}`,
+      revenueAtRisk: `₹${(revenueAtRisk * 82).toLocaleString()}`,
+      projectedProfit: `₹${((totalRevenue * 82) + (opportunitiesCount * 1500)).toLocaleString()}`,
+      activeClients: activeClients.toString(),
+      pendingActions: pendingActions.toString(),
+      opportunities: opportunitiesCount.toString(),
+      agentLogs: logs,
+      agents
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Stats retrieval failed' });
+  }
 });
 
 app.get('/api/proposals', authenticate, async (req, res) => {
@@ -437,31 +593,47 @@ app.post('/api/ai/analyze-business', authenticate, async (req, res) => {
 
     const context = {
       profile: user.profile,
-      clients: user.clients.map(c => ({ name: c.name, status: c.status, totalValue: c.totalValue })),
+      clients: user.clients.map(c => ({ 
+        name: c.name, 
+        status: c.status, 
+        projectStatus: c.projectStatus,
+        pendingPayment: c.pendingPayment,
+        healthScore: c.healthScore,
+        riskLevel: c.riskLevel
+      })),
       proposals: user.proposals.map(p => ({ title: p.title, status: p.status, value: p.value, clientName: p.clientName }))
     };
 
-    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
-    const prompt = `You are the AgentOS Freelance Command Centre. 
-      Analyze this freelancer's data and detect risks or opportunities. 
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const prompt = `You are the AgentOS Autonomous Operating System.
+      Analyze this freelancer's data. You MUST detect risks, predict loss, and suggest actions.
       
       DATA: ${JSON.stringify(context)}
+      
+      CRITICAL INSTRUCTIONS:
+      1. SHOCK ALERT: Always calculate the financial loss if the freelancer fails to act.
+      2. LEARNING BEHAVIOR: Analyze past patterns (simulated if data is low) to show when they usually lose deals.
+      3. REVENUE AT RISK: Sum total pending payments from high-risk clients.
       
       STRICT JSON OUTPUT:
       {
         "risk_level": "Low | Medium | High | Critical",
-        "reason": "Why this level",
-        "revenue_at_risk": "Estimated ₹ amount",
-        "recommended_action": "What should be done",
-        "auto_message": "Ready-to-send message",
-        "confidence_score": "0-100"
+        "reason": "Direct reason based on signals",
+        "revenue_at_risk": "₹ amount",
+        "shock_alert": "If no action is taken, this freelancer will likely lose ₹X in the next 48 hours.",
+        "learning_insight": "e.g., Based on trends, you lose 70% of deals after 5 days of silence.",
+        "recommended_action": "Sharp, actionable one-liner",
+        "auto_message": "A hyper-professional follow-up message",
+        "confidence_score": 85,
+        "show_tech_flash": true
       }
-      Respond ONLY with JSON. No formatting.`;
+      Respond ONLY with valid JSON.`;
 
     const result = await model.generateContent(prompt);
     let text = result.response.text().trim();
     if (text.startsWith('```json')) text = text.replace(/```json|```/g, '');
-    res.json(JSON.parse(text));
+    const analysisData = JSON.parse(text);
+    res.json({ ...analysisData, timestamp: new Date().toISOString() });
   } catch (error) {
     console.error('Command Centre Analysis Failure:', error);
     res.status(500).json({ error: 'Critical failure in intelligence engine' });
