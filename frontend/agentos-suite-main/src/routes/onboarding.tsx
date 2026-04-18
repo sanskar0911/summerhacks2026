@@ -44,6 +44,7 @@ function OnboardingComponent() {
     jobType: "Freelance",
     availability: 40,
     expectedSalary: "5000",
+    portfolioUrl: ""
   });
 
   const [skillInput, setSkillInput] = useState("");
@@ -301,29 +302,29 @@ function OnboardingComponent() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-xs font-medium text-muted-foreground flex items-center gap-2">
-                      <Clock className="h-3 w-3" /> Availability (Hours/Week)
-                    </label>
-                    <input
-                      type="number"
-                      value={formData.availability}
-                      onChange={e => updateForm({ availability: parseInt(e.target.value) })}
-                      className="w-full glass bg-white/5 rounded-xl py-2.5 px-4 text-sm focus:outline-none"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-medium text-muted-foreground flex items-center gap-2">
-                      <DollarSign className="h-3 w-3" /> Monthly Rate ($)
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.expectedSalary}
-                      onChange={e => updateForm({ expectedSalary: e.target.value })}
-                      className="w-full glass bg-white/5 rounded-xl py-2.5 px-4 text-sm focus:outline-none"
-                    />
-                  </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-muted-foreground flex items-center gap-2">
+                    <DollarSign className="h-3 w-3" /> Monthly Rate ($)
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.expectedSalary}
+                    onChange={e => updateForm({ expectedSalary: e.target.value })}
+                    className="w-full glass bg-white/5 rounded-xl py-2.5 px-4 text-sm focus:outline-none"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-muted-foreground flex items-center gap-2">
+                    <Briefcase className="h-3 w-3" /> Portfolio / Resume URL
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.portfolioUrl}
+                    onChange={e => updateForm({ portfolioUrl: e.target.value })}
+                    className="w-full glass bg-white/5 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary/50"
+                    placeholder="https://portfolio.me or linkedin.com/in/..."
+                  />
                 </div>
               </div>
 

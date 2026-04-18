@@ -46,6 +46,7 @@ function Proposals() {
   const [userProfile, setUserProfile] = useState<any>(null);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [injectedJob, setInjectedJob] = useState<any>(null);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -58,6 +59,24 @@ function Proposals() {
         console.error("Failed to fetch user profile", err);
       }
     };
+    
+    // Check for context from the Apply redirect
+    const contextStr = localStorage.getItem("agentos_draft_context");
+    if (contextStr) {
+      try {
+        const context = JSON.parse(contextStr);
+        setInjectedJob({
+          id: 'injected',
+          title: context.title,
+          description: context.description,
+          clientEmail: context.clientEmail
+        });
+        setSelectedJobId('injected' as any);
+      } catch (e) {
+        console.error("Context parse error", e);
+      }
+    }
+
     fetchProfile();
   }, []);
 
@@ -68,7 +87,7 @@ function Proposals() {
   };
 
   const handleGenerate = async () => {
-    const selectedJob = SAMPLE_JOBS.find(j => j.id === selectedJobId);
+    const selectedJob = injectedJob && selectedJobId === 'injected' ? injectedJob : SAMPLE_JOBS.find(j => j.id === selectedJobId);
     if (!selectedJob) return;
 
     setText("");
@@ -100,14 +119,16 @@ function Proposals() {
     if (!text || sending) return;
     setSending(true);
     try {
-      const selectedJob = SAMPLE_JOBS.find(j => j.id === selectedJobId);
+      const selectedJob = injectedJob && selectedJobId === 'injected' ? injectedJob : SAMPLE_JOBS.find(j => j.id === selectedJobId);
       const res = await api.post("/send-email", {
         subject: `Proposal Architect: ${selectedJob?.title || "Project Pitch"}`,
-        message: text
+        message: text,
+        to: selectedJob?.clientEmail || undefined // If injected, use specific client email
       });
       
       if (res.data.success) {
         setSent(true);
+        localStorage.removeItem("agentos_draft_context"); // Clear context after sending
         setTimeout(() => setSent(false), 5000);
       }
     } catch (err) {
@@ -201,6 +222,22 @@ function Proposals() {
               Pulse Signals
             </div>
             <div className="space-y-3">
+              {injectedJob && (
+                <button
+                  onClick={() => setSelectedJobId('injected' as any)}
+                  className={`w-full text-left p-4 rounded-xl border transition-all bg-gradient-to-br from-primary/10 to-transparent border-primary/30 shadow-glow-primary/10`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-foreground tracking-tight">{injectedJob.title}</h4>
+                      <p className="text-[10px] text-muted-foreground mt-1 line-clamp-2 font-medium leading-relaxed">{injectedJob.description}</p>
+                    </div>
+                  </div>
+                </button>
+              )}
               {SAMPLE_JOBS.map((job) => (
                 <button
                   key={job.id}
@@ -208,7 +245,7 @@ function Proposals() {
                   className={`w-full text-left p-4 rounded-xl border transition-all ${selectedJobId === job.id
                     ? "bg-primary/10 border-primary/30 shadow-glow-primary/10"
                     : "bg-white/5 border-white/5 hover:bg-white/10"
-                    }`}
+                    } ${injectedJob && selectedJobId === 'injected' && job.id === 1 ? 'hidden' : ''}`} // Small hack to avoid crowding if needed
                 >
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5">

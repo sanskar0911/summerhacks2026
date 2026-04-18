@@ -15,6 +15,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SanskarIndexRouteImport } from './routes/sanskar/index'
 import { Route as SanskarProposalsRouteImport } from './routes/sanskar/proposals'
 import { Route as SanskarOpportunitiesRouteImport } from './routes/sanskar/opportunities'
+import { Route as SanskarLeaderboardRouteImport } from './routes/sanskar/leaderboard'
 import { Route as SanskarInsightsRouteImport } from './routes/sanskar/insights'
 import { Route as SanskarClientsRouteImport } from './routes/sanskar/clients'
 import { Route as SanskarChatbotRouteImport } from './routes/sanskar/chatbot'
@@ -49,6 +50,11 @@ const SanskarOpportunitiesRoute = SanskarOpportunitiesRouteImport.update({
   path: '/sanskar/opportunities',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SanskarLeaderboardRoute = SanskarLeaderboardRouteImport.update({
+  id: '/sanskar/leaderboard',
+  path: '/sanskar/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SanskarInsightsRoute = SanskarInsightsRouteImport.update({
   id: '/sanskar/insights',
   path: '/sanskar/insights',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/leaderboard': typeof SanskarLeaderboardRoute
   '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
   '/sanskar/proposals': typeof SanskarProposalsRoute
   '/sanskar/': typeof SanskarIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/leaderboard': typeof SanskarLeaderboardRoute
   '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
   '/sanskar/proposals': typeof SanskarProposalsRoute
   '/sanskar': typeof SanskarIndexRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
+  '/sanskar/leaderboard': typeof SanskarLeaderboardRoute
   '/sanskar/opportunities': typeof SanskarOpportunitiesRoute
   '/sanskar/proposals': typeof SanskarProposalsRoute
   '/sanskar/': typeof SanskarIndexRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
+    | '/sanskar/leaderboard'
     | '/sanskar/opportunities'
     | '/sanskar/proposals'
     | '/sanskar/'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
+    | '/sanskar/leaderboard'
     | '/sanskar/opportunities'
     | '/sanskar/proposals'
     | '/sanskar'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
+    | '/sanskar/leaderboard'
     | '/sanskar/opportunities'
     | '/sanskar/proposals'
     | '/sanskar/'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   SanskarChatbotRoute: typeof SanskarChatbotRoute
   SanskarClientsRoute: typeof SanskarClientsRoute
   SanskarInsightsRoute: typeof SanskarInsightsRoute
+  SanskarLeaderboardRoute: typeof SanskarLeaderboardRoute
   SanskarOpportunitiesRoute: typeof SanskarOpportunitiesRoute
   SanskarProposalsRoute: typeof SanskarProposalsRoute
   SanskarIndexRoute: typeof SanskarIndexRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SanskarOpportunitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sanskar/leaderboard': {
+      id: '/sanskar/leaderboard'
+      path: '/sanskar/leaderboard'
+      fullPath: '/sanskar/leaderboard'
+      preLoaderRoute: typeof SanskarLeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sanskar/insights': {
       id: '/sanskar/insights'
       path: '/sanskar/insights'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   SanskarChatbotRoute: SanskarChatbotRoute,
   SanskarClientsRoute: SanskarClientsRoute,
   SanskarInsightsRoute: SanskarInsightsRoute,
+  SanskarLeaderboardRoute: SanskarLeaderboardRoute,
   SanskarOpportunitiesRoute: SanskarOpportunitiesRoute,
   SanskarProposalsRoute: SanskarProposalsRoute,
   SanskarIndexRoute: SanskarIndexRoute,

@@ -10,6 +10,7 @@ import {
   X,
   Bell,
   Cpu,
+  Award
 } from "lucide-react";
 import { BrainOrb } from "./BrainOrb";
 import { TypingDots } from "./TypingDots";
@@ -19,10 +20,10 @@ import { LogOut } from "lucide-react";
 const nav = [
   { to: "/sanskar", label: "Dashboard", icon: LayoutDashboard },
   { to: "/sanskar/opportunities", label: "Opportunities", icon: Sparkles },
-  { to: "/sanskar/clients", label: "Clients", icon: Users },
+  { to: "/sanskar/leaderboard", label: "Leaderboard", icon: Award },
+  { to: "/sanskar/clients", label: "Partners", icon: Users },
   { to: "/sanskar/proposals", label: "Proposals", icon: FileText },
-  { to: "/sanskar/insights", label: "Insights", icon: TrendingUp },
-  { to: "/sanskar/chatbot", label: "Agent Oracle", icon: Cpu },
+  { to: "/sanskar/chatbot", label: "Career Oracle", icon: Cpu },
 ] as const;
 
 
@@ -44,19 +45,21 @@ export function AppShell({ children }: { children: ReactNode }) {
     : "??";
 
   return (
-    <div className="min-h-screen flex w-full text-foreground">
+    <div className="min-h-screen flex w-full text-foreground bg-[#030303]">
       {/* Sidebar */}
       <aside
         className={`fixed lg:sticky top-0 left-0 z-40 h-screen w-64 lg:w-60 shrink-0 transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
-        <div className="h-full glass border-r border-border/60 flex flex-col p-4">
+        <div className="h-full glass-strong border-r border-white/5 flex flex-col p-4">
           <div className="flex items-center gap-2.5 px-2 py-3">
-            <BrainOrb size={28} />
+            <div className="h-8 w-8 rounded-lg bg-gradient-primary flex items-center justify-center p-1.5 shadow-glow-primary">
+              <Sparkles className="h-full w-full text-white" />
+            </div>
             <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-tight">AgentOS</div>
-              <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                Autonomous
+              <div className="text-sm font-black tracking-tight text-white uppercase italic">JobMatch <span className="text-primary not-italic tracking-tighter">AI</span></div>
+              <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground font-black opacity-50">
+                Nexus v1.0
               </div>
             </div>
           </div>
@@ -121,12 +124,12 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <span className="absolute inset-0 rounded-full bg-success animate-glow-pulse" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
               </span>
-              <span className="text-sm font-medium">AgentOS Active</span>
+              <span className="text-sm font-bold tracking-tight">Nexus Active</span>
             </div>
 
-            <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground ml-4 px-3 py-1.5 rounded-full bg-white/5">
+            <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground ml-4 px-3 py-1.5 rounded-full bg-white/5 border border-white/5">
               <TypingDots className="text-primary" />
-              <span className="shimmer-text">Welcome back, {user?.name?.split(" ")[0]}…</span>
+              <span className="shimmer-text">Ready for discovery, <b>{user?.name?.split(" ")[0]}</b>...</span>
             </div>
 
             <div className="ml-auto flex items-center gap-2">

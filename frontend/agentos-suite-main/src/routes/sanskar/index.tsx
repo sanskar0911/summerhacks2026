@@ -14,7 +14,9 @@ import {
   ArrowUpRight,
   ChevronRight,
   Target,
-  Rocket
+  Rocket,
+  Check,
+  Loader2
 } from "lucide-react";
 import { BrainOrb } from "../../components/BrainOrb";
 import { TypingDots } from "../../components/TypingDots";
@@ -23,341 +25,264 @@ import { useState, useEffect } from "react";
 import api from "../../lib/api";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export const Route = createFileRoute("/sanskar/")({
   head: () => ({
     meta: [
-      { title: "Control Center · AgentOS" },
+      { title: "Dashboard · JobMatch AI" },
       {
         name: "description",
-        content: "Autonomous Business Operating System - AI-driven execution and market intelligence.",
+        content: "Autonomous Job Matching Platform - AI-driven career growth.",
       },
     ],
   }),
   component: Dashboard,
 });
-
-// Agent definitions are now dynamic and fetched from the backend via the stats endpoint
-
 function Dashboard() {
-  const [stats, setStats] = useState<any>(null);
-  const [opportunities, setOpportunities] = useState<any[]>([]);
+  const [matches, setMatches] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [analysis, setAnalysis] = useState<any>(null);
-  const [analyzing, setAnalyzing] = useState(true);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [applyingId, setApplyingId] = useState<string | null>(null);
+  const [appliedIds, setAppliedIds] = useState<string[]>([]);
+  const { user } = useAuth();
   const navigate = useNavigate();
 
-  const fetchDashboard = async () => {
+  const fetchMatches = async () => {
+    setAnalyzing(true);
     try {
-      const [statsRes, oppsRes, analysisRes] = await Promise.all([
-        api.get("/stats"),
-        api.get("/opportunities"),
-        api.post("/ai/analyze-business").catch(() => ({ data: null }))
+      const [analysisRes, matchesRes] = await Promise.all([
+        api.post("/analyze-profile").catch(() => ({ data: null })),
+        api.get("/jobs/matches")
       ]);
-      setStats(statsRes.data);
-      setOpportunities(oppsRes.data.slice(0, 6));
       setAnalysis(analysisRes.data);
+      setMatches(matchesRes.data);
     } catch (err) {
       console.error(err);
     } finally {
-      setLoading(false);
       setAnalyzing(false);
+      setLoading(false);
+    }
+  };
+
+  const handleApply = async (jobId: string) => {
+    setApplyingId(jobId);
+    try {
+      await api.post("/applications", { opportunityId: jobId });
+      setAppliedIds(prev => [...prev, jobId]);
+    } catch (err) {
+      console.error("Transmission Error", err);
+    } finally {
+      setApplyingId(null);
     }
   };
 
   useEffect(() => {
-    fetchDashboard();
+    fetchMatches();
   }, []);
-
-  const nextAction = {
-    title: analysis?.recommended_action || "Syncing Market Intelligence...",
-    reason: analysis?.reason || "Aggregating signals from your active roster and market radar.",
-    confidence: analysis?.confidence_score || 0,
-    link: analysis?.recommended_action?.toLowerCase()?.includes("proposal") ? "/sanskar/proposals" : "/sanskar/opportunities",
-    icon: Rocket
-  };
-
-  const dashboardStats = [
-    { label: "Monthly Earnings", value: stats?.totalRevenue || "₹18,420", delta: "+24%", icon: DollarSign },
-    { label: "Active Clients", value: stats?.activeClients || "7", delta: "+2", icon: Users },
-    { label: "Pending Actions", value: stats?.pendingActions || "4", delta: "now", icon: Zap },
-    { label: "Revenue at Risk", value: stats?.revenueAtRisk || "₹0", delta: "Critical", icon: AlertTriangle },
-  ];
-
-  const agentLogs = stats?.agentLogs || [
-    { agent: "System", msg: "Initializing neural links...", time: "now" }
-  ];
-
-  const agentCards = [
-    {
-      name: "Ops Agent",
-      desc: "Drafts proposals, manages invoices and executes contracts.",
-      icon: Briefcase,
-      gradient: "bg-gradient-primary",
-      to: "/sanskar/proposals",
-      status: stats?.agents?.find((a: any) => a.name === "Ops Agent")?.status || "Active",
-      action: "Run Ops",
-    },
-    {
-      name: "Lead Scout",
-      desc: "Discovers high-value opportunities and matches you with global demand.",
-      icon: Sparkles,
-      gradient: "bg-gradient-cool",
-      to: "/sanskar/opportunities",
-      status: stats?.agents?.find((a: any) => a.name === "Lead Scout")?.status || "Scanning…",
-      action: "Find Leads",
-    },
-    {
-      name: "Trend Radar",
-      desc: "Detects market shifts and surfaces early-stage profit opportunities.",
-      icon: Radar,
-      gradient: "bg-gradient-warm",
-      to: "/sanskar/insights",
-      status: stats?.agents?.find((a: any) => a.name === "Trend Radar")?.status || "Monitoring",
-      action: "Scan Trends",
-    },
-    {
-      name: "Comms Agent",
-      desc: "Automates follow-ups, drafts replies, and tunes your professional tone.",
-      icon: MessageSquare,
-      gradient: "bg-gradient-primary",
-      to: "/sanskar/proposals",
-      status: stats?.agents?.find((a: any) => a.name === "Comms Agent")?.status || "Ready",
-      action: "Open Comms",
-    },
-  ];
 
   return (
     <div className="space-y-8 pb-10">
-      {/* NEXT ACTION HERO - HACKATHON FOCUS */}
+      {/* 1. AGENTOS ACTIVE STATUS BAR */}
+      <div className="flex items-center justify-between">
+         <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/10 border border-success/20">
+               <div className="h-2 w-2 rounded-full bg-success animate-pulse" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-success">AgentOS Active</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+               <TypingDots />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Welcome back, {user?.name?.split(' ')[0] || 'Agent'}...</span>
+            </div>
+         </div>
+      </div>
+
+      {/* 2. NEXT BEST ACTION HERO */}
       <section className="relative">
-        <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full" />
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative glass-strong rounded-[2.5rem] p-8 md:p-12 border border-white/10 overflow-hidden"
+          className="relative glass-strong rounded-[2.5rem] p-8 md:p-14 border border-white/10 overflow-hidden bg-gradient-to-br from-[#12141d] to-[#0a0b0f]"
         >
-          <div className="absolute top-0 right-0 p-8 lg:p-12 hidden md:block opacity-20 group">
-             <BrainOrb size={180} speed={analyzing ? 4 : 1} />
+          <div className="absolute top-0 right-0 p-12 lg:p-16 opacity-30">
+             <BrainOrb size={300} speed={analyzing ? 4 : 1} />
           </div>
 
-          <div className="relative z-10 max-w-2xl space-y-6">
-            <div className="flex items-center gap-4">
-              <button 
-                onClick={fetchDashboard}
-                disabled={analyzing}
-                className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-all hover:bg-primary/20 disabled:opacity-50 ${analyzing ? 'animate-pulse' : ''}`}
-              >
-                <Zap className={`h-3 w-3 fill-primary ${analyzing ? 'animate-spin' : ''}`} />
-                {analyzing ? 'Syncing Neural Signals...' : 'Re-Sync Intelligence'}
-              </button>
-              {analysis?.timestamp && (
-                <div className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest opacity-50">
-                  Last Updated: {new Date(analysis.timestamp).toLocaleTimeString()}
-                </div>
-              )}
+          <div className="relative z-10 max-w-2xl space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+              <Zap className="h-3 w-3 fill-primary" /> Intelligence Engine: Recommended Action
             </div>
             
-            <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-[1] text-white">
                 Next Best Action: <br />
-                <span className="text-gradient-primary">{nextAction.title}</span>
+                <span className="text-gradient-primary">
+                   {analyzing ? 'Scanning Roster...' : analysis ? 'Deploying Proposal Agent' : 'Syncing Market Intelligence...'}
+                </span>
               </h1>
-              <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
-                {nextAction.reason}
+              <p className="text-muted-foreground text-lg font-medium max-w-xl">
+                Aggregating signals from your active roster and market radar. High-yield opportunities detected in your current domain.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-               <button 
-                onClick={() => navigate({ to: nextAction.link as any })}
-                className="group relative inline-flex items-center gap-3 bg-gradient-primary px-8 py-4 rounded-2xl text-primary-foreground font-bold shadow-glow-primary hover:brightness-110 transition-all active:scale-[0.98]"
-               >
-                  Execute with AgentOS <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-               </button>
-               
-               <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-2xl glass border border-white/10 flex items-center justify-center font-bold text-lg text-primary">
-                    {nextAction.confidence}%
-                  </div>
-                  <div className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground leading-tight">
-                    Intelligence <br /> Confidence
-                  </div>
-               </div>
+            <div className="flex items-center gap-8 pt-4">
+              <button 
+                onClick={fetchMatches}
+                disabled={analyzing}
+                className="group inline-flex items-center gap-3 bg-gradient-primary px-8 py-4 rounded-2xl text-white font-bold uppercase tracking-widest text-xs shadow-glow-primary hover:brightness-110 active:scale-95 transition-all"
+              >
+                Execute with AgentOS <ArrowRight className="h-4 w-4" />
+              </button>
+              
+              <div className="flex items-center gap-4">
+                 <div className="relative h-14 w-14">
+                    <svg className="h-full w-full -rotate-90">
+                       <circle cx="28" cy="28" r="24" stroke="currentColor" strokeWidth="4" fill="transparent" className="text-white/5" />
+                       <circle cx="28" cy="28" r="24" stroke="currentColor" strokeWidth="4" fill="transparent" strokeDasharray="150" strokeDashoffset={analyzing ? 150 : 20} className="text-primary transition-all duration-1000" />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-black text-white">{analyzing ? '0%' : '82%'}</div>
+                 </div>
+                 <div className="text-[10px] items-start flex flex-col uppercase font-bold tracking-widest text-muted-foreground">
+                    <span>Intelligence</span>
+                    <span>Confidence</span>
+                 </div>
+              </div>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* DASHBOARD STATS with INR Localization */}
-      <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {dashboardStats.map((stat, i) => {
-          const Icon = stat.icon;
-          return (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 + i * 0.05 }}
-              className="glass rounded-3xl p-6 border border-white/5 group hover:bg-white/[0.08] transition-all"
+      {/* 3. METRICS ROW */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+         {[
+            { label: 'Monthly Earnings', val: '₹6,97,000', icon: DollarSign, color: 'text-primary', trend: '+24%', trendColor: 'text-success' },
+            { label: 'Active Clients', val: '0', icon: Users, color: 'text-blue-400', trend: '+2', trendColor: 'text-success' },
+            { label: 'Pending Actions', val: '0', icon: Zap, color: 'text-yellow-500', trend: 'now', trendColor: 'text-primary' },
+            { label: 'Profit Projected', val: '₹45,000', icon: TrendingUp, color: 'text-purple-400', trend: 'Growth', trendColor: 'text-success' },
+         ].map((m, i) => (
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.1 }}
+               key={i} className="glass rounded-[2rem] p-6 border border-white/5 relative group hover:bg-white/5 transition-all"
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div className="text-[10px] font-bold text-success bg-success/10 px-2 py-0.5 rounded-full border border-success/20">
-                  {stat.delta}
-                </div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-2xl font-bold tracking-tight text-gradient-primary">{stat.value}</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">{stat.label}</div>
-              </div>
+               <div className="flex justify-between items-start mb-6">
+                  <div className={`h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center ${m.color}`}>
+                     <m.icon className="h-5 w-5" />
+                  </div>
+                  <div className={`text-[10px] font-bold ${m.trendColor} bg-white/5 px-2 py-1 rounded-lg`}>{m.trend}</div>
+               </div>
+               <div className="text-2xl font-black text-white mb-1">{m.val}</div>
+               <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{m.label}</div>
             </motion.div>
-          );
-        })}
-      </section>
+         ))}
+      </div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
-        {/* AGENT ACTIVITY FEED */}
-        <div className="lg:col-span-2 space-y-8">
-          <section className="space-y-4">
-             <div className="flex items-center justify-between px-2">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
-                   <Activity className="h-3.5 w-3.5 text-primary" />
-                   System Activity Logs
-                </h3>
-             </div>
-             <div className="glass-strong rounded-3xl p-2 border border-white/5 space-y-1">
-                {agentLogs.map((log, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors group">
-                    <div className="h-2 w-2 rounded-full bg-primary shadow-glow-primary animate-pulse" />
-                    <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                       <span className="text-sm font-semibold tracking-tight">{log.msg}</span>
-                       <div className="flex items-center gap-2">
-                         <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-white/5 border border-white/10">{log.agent}</span>
-                         <span className="text-[10px] text-muted-foreground font-medium">{log.time}</span>
+      <div className="grid lg:grid-cols-12 gap-8">
+        {/* 4. ACTIVITY LOGS (Left Side) - 8 Cols */}
+        <div className="lg:col-span-8 space-y-8">
+           <section className="space-y-4">
+              <div className="flex items-center gap-2 px-2">
+                 <Activity className="h-4 w-4 text-primary" />
+                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">System Activity Logs</h3>
+              </div>
+              <div className="glass-strong rounded-[2rem] p-4 divide-y divide-white/5 border border-white/10">
+                 {[
+                    { text: 'Found 3 new high-value opportunities', tag: 'LEAD SCOUT', time: '2m ago' },
+                    { text: 'React + AI demand up 14% in Mumbai', tag: 'TREND RADER', time: '15m ago' },
+                    { text: 'Drafted proposal for Fintech Startup', tag: 'OPS AGENT', time: '1h ago' }
+                 ].map((log, i) => (
+                    <div key={i} className="py-4 px-4 flex items-center justify-between group hover:bg-white/5 rounded-xl transition-all">
+                       <div className="flex items-center gap-4">
+                          <div className="h-2 w-2 rounded-full bg-primary" />
+                          <span className="text-sm font-medium text-white/90">{log.text}</span>
+                       </div>
+                       <div className="flex items-center gap-4">
+                          <span className="text-[9px] font-black tracking-widest px-2 py-1 bg-white/10 rounded-md text-muted-foreground">{log.tag}</span>
+                          <span className="text-[10px] text-muted-foreground font-medium">{log.time}</span>
                        </div>
                     </div>
-                  </div>
-                ))}
-             </div>
-          </section>
+                 ))}
+              </div>
+           </section>
 
-          {/* PERSONA SELECTION & AGENT CARDS */}
-          <section className="space-y-4">
-            <div className="flex items-center justify-between px-2">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Specialized Agents</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {agentCards.map((agent) => {
-                const Icon = agent.icon;
-                return (
-                  <button
-                    key={agent.name}
-                    onClick={() => navigate({ to: agent.to as any })}
-                    className="group glass rounded-[2rem] p-6 border border-white/5 hover:bg-white/[0.07] transition-all text-left relative overflow-hidden"
-                  >
-                    <div className="flex items-start justify-between mb-6">
-                      <div className={`h-14 w-14 rounded-2xl ${agent.gradient} flex items-center justify-center p-3.5 text-primary-foreground group-hover:scale-110 transition-transform shadow-lg`}>
-                        <Icon className="h-full w-full" />
-                      </div>
-                      <div className="text-[10px] uppercase font-bold tracking-widest text-primary/60 bg-primary/5 px-2 py-1 rounded-lg border border-primary/20">
-                         {agent.status}
-                      </div>
+           {/* 5. SPECIALIZED AGENTS GRID */}
+           <section className="space-y-4">
+              <div className="flex items-center gap-2 px-2">
+                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">Specialized Agents</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                 {[
+                    { name: 'Ops Agent', desc: 'Drafts proposals, manages invoices and executes contracts.', status: 'ACTIVE', icon: Briefcase, color: 'bg-blue-500/20 text-blue-400' },
+                    { name: 'Lead Scout', desc: 'Discovers high-value opportunities and matches you with global demand.', status: 'SCANNING...', icon: Radar, color: 'bg-cool/20 text-cool' },
+                    { name: 'Trend Radar', desc: 'Detects market shifts and surfaces early-stage profit opportunities.', status: 'MONITORING', icon: Target, color: 'bg-orange-500/20 text-orange-400' },
+                    { name: 'Comms Agent', desc: 'Automates follow-ups, drafts replies, and tunes your professional tone.', status: 'READY', icon: MessageSquare, color: 'bg-purple-500/20 text-purple-400' }
+                 ].map((agent, i) => (
+                    <div key={i} className="glass-strong rounded-[2.5rem] p-8 border border-white/10 relative overflow-hidden group">
+                       <div className="flex justify-between items-start mb-6">
+                          <div className={`h-14 w-14 rounded-2xl flex items-center justify-center ${agent.color} shadow-lg`}>
+                             <agent.icon className="h-7 w-7" />
+                          </div>
+                          <div className="text-[9px] font-black px-3 py-1 bg-white/5 rounded-full border border-white/5 text-muted-foreground">{agent.status}</div>
+                       </div>
+                       <h4 className="text-xl font-bold mb-2 text-white">{agent.name}</h4>
+                       <p className="text-xs text-muted-foreground font-medium mb-8 leading-relaxed">{agent.desc}</p>
+                       <button className="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-3 transition-all">
+                          Initialize Protocol <ArrowUpRight className="h-4 w-4" />
+                       </button>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-bold tracking-tight">{agent.name}</h4>
-                      <p className="mt-2 text-xs text-muted-foreground/80 leading-relaxed font-medium">
-                        {agent.desc}
-                      </p>
-                    </div>
-                    <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary group-hover:gap-3 transition-all">
-                      {agent.action} <ArrowUpRight className="h-3.5 w-3.5" />
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
+                 ))}
+              </div>
+           </section>
         </div>
 
-        {/* MARKET FEED & MONETIZATION */}
-        <aside className="space-y-6">
-           <div className="glass-strong rounded-3xl p-8 border border-white/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                 <Rocket className="h-20 w-20 text-primary rotate-45" />
+        {/* 6. SIDE RADAR (Right Side) - 4 Cols */}
+        <aside className="lg:col-span-4 space-y-8">
+           <section className="glass-strong rounded-[2.5rem] p-8 border border-white/10 space-y-8">
+              <div className="flex items-center justify-between">
+                 <h3 className="text-[10px] uppercase font-black tracking-widest text-muted-foreground">Market Signal</h3>
+                 <Rocket className="h-4 w-4 text-primary" />
               </div>
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Market Signal</h3>
-                <div className="flex gap-1">
-                   <div className="h-1 w-1 rounded-full bg-success animate-bounce" />
-                   <div className="h-1 w-1 rounded-full bg-success animate-bounce [animation-delay:0.2s]" />
-                   <div className="h-1 w-1 rounded-full bg-success animate-bounce [animation-delay:0.4s]" />
-                </div>
-              </div>
+
               <div className="space-y-6">
-                {loading ? <div className="py-10 flex justify-center"><TypingDots /></div> : opportunities.slice(0, 3).map((opp, i) => (
-                  <div key={i} className="group cursor-pointer">
-                    <div className="flex justify-between items-start mb-1">
-                       <span className="text-[10px] font-bold text-primary uppercase tracking-widest">{opp.match}% Match</span>
-                       <span className="text-[10px] font-bold text-muted-foreground">{opp.pay || "₹15,000"}</span>
+                 {matches.slice(0, 3).map((job, i) => (
+                    <div key={i} className="space-y-2 group cursor-pointer">
+                       <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-primary underline decoration-primary/20">
+                          <span>{job.score || 95}% Match</span>
+                          <span className="text-white">{job.rate}</span>
+                       </div>
+                       <h5 className="text-sm font-bold text-white group-hover:text-primary transition-colors">{job.title}</h5>
+                       <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest">{job.company}</div>
                     </div>
-                    <div className="text-sm font-bold tracking-tight group-hover:text-primary transition-colors line-clamp-1">{opp.title}</div>
-                    <div className="text-[10px] text-muted-foreground font-medium mt-0.5">{opp.company}</div>
-                  </div>
-                ))}
+                 ))}
               </div>
-              
-              <div className="mt-10 p-5 rounded-3xl bg-primary/5 border border-primary/10 relative overflow-hidden group">
-                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                 <div className="flex items-center gap-2 text-[10px] font-bold text-primary mb-3 relative z-10">
-                    <BrainOrb size={12} /> Learning Intelligence
+
+              <div className="pt-6 border-t border-white/5">
+                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 mb-6">
+                    <div className="flex items-center gap-2 text-[10px] font-black text-primary uppercase mb-1">
+                       <TrendingUp className="h-3 w-3" /> Growth Insight
+                    </div>
+                    <p className="text-[10px] text-muted-foreground font-medium leading-relaxed">
+                       "Increase your hourly pricing by 18% based on recent market shifts in AI Product Design."
+                    </p>
                  </div>
-                 <p className="text-[11px] leading-relaxed text-foreground font-semibold relative z-10">
-                    "{analysis?.learning_insight || "Analyzing patterns: Your deal conversion rate drops significantly after 4.2 days of client silence."}"
-                 </p>
+                 <button className="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all">
+                    Scan Global Market
+                 </button>
               </div>
+           </section>
 
-              {analysis?.shock_alert && (
-                <div className="mt-4 p-5 rounded-3xl bg-destructive/10 border border-destructive/20 animate-glow-pulse">
-                   <div className="flex items-center gap-2 text-[10px] font-bold text-destructive mb-2 uppercase tracking-tighter">
-                      <AlertTriangle className="h-3 w-3" /> Revenue Shock Alert
-                   </div>
-                   <p className="text-[11px] leading-tight text-white font-bold">
-                      {analysis.shock_alert}
-                   </p>
-                </div>
-              )}
-
-              {analysis?.show_tech_flash && (
-                <div className="mt-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 font-mono text-[8px] text-muted-foreground/60 leading-tight">
-                  <div className="flex items-center gap-2 mb-1 text-primary/40 font-bold uppercase">
-                    <Zap className="h-2 w-2" /> Tech Flash Logic
-                  </div>
-                  SYSTEM: Retrieval (Clients) + Behavorial (Response Time) + Reasoning (Gemini-1.5) {'=>'} Action(₹ risk prediction).
-                </div>
-              )}
-
-              <button 
-                onClick={() => navigate({ to: "/sanskar/opportunities" })}
-                className="w-full mt-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white/10 transition-all active:scale-[0.98]"
-              >
-                Scan Global Market
-              </button>
-           </div>
-
-           <div className="glass rounded-3xl p-6 border border-white/5 space-y-4">
-              <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-widest text-muted-foreground">
-                 <span>AgentOS Fee Model</span>
-                 <Target className="h-3 w-3 text-primary" />
+           <div className="glass rounded-[2rem] p-6 border border-white/5 relative overflow-hidden group">
+              <div className="flex justify-between items-center mb-4">
+                 <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">AgentOS Fee Model</span>
+                 <Target className="h-4 w-4 text-primary" />
               </div>
               <div className="flex items-end justify-between">
-                 <div className="space-y-0.5">
-                    <div className="text-2xl font-bold tracking-tight">₹500</div>
-                    <div className="text-[10px] text-muted-foreground font-medium">Per automated deal</div>
+                 <div>
+                    <div className="text-2xl font-black text-white">₹500</div>
+                    <div className="text-[9px] text-muted-foreground font-medium uppercase tracking-widest">Per automated deal</div>
                  </div>
-                 <div className="text-[10px] text-right font-medium text-muted-foreground/60 leading-tight">
-                    Estimated ROI <br /> <span className="text-primary font-bold">12.5x</span>
+                 <div className="text-right">
+                    <div className="text-[9px] font-black text-success uppercase">Estimated ROI</div>
+                    <div className="text-lg font-black text-white">12.5x</div>
                  </div>
               </div>
            </div>
