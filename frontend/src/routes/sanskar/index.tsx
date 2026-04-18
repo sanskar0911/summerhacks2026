@@ -40,6 +40,7 @@ export const Route = createFileRoute("/sanskar/")({
 });
 function Dashboard() {
   const [matches, setMatches] = useState<any[]>([]);
+  const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [analysis, setAnalysis] = useState<any>(null);
   const [analyzing, setAnalyzing] = useState(false);
@@ -48,15 +49,17 @@ function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const fetchMatches = async () => {
+  const fetchDashboardData = async () => {
     setAnalyzing(true);
     try {
-      const [analysisRes, matchesRes] = await Promise.all([
+      const [analysisRes, matchesRes, statsRes] = await Promise.all([
         api.post("/analyze-profile").catch(() => ({ data: null })),
-        api.get("/jobs/matches")
+        api.get("/jobs/matches"),
+        api.get("/api/stats")
       ]);
       setAnalysis(analysisRes.data);
       setMatches(matchesRes.data);
+      setStats(statsRes.data);
     } catch (err) {
       console.error(err);
     } finally {
@@ -78,7 +81,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    fetchMatches();
+    fetchDashboardData();
   }, []);
 
   return (
@@ -127,8 +130,7 @@ function Dashboard() {
 
             <div className="flex items-center gap-8 pt-4">
               <button 
-                onClick={fetchMatches}
-                disabled={analyzing}
+                onClick={() => navigate({ to: '/sanskar/opportunities' })}
                 className="group inline-flex items-center gap-3 bg-gradient-primary px-8 py-4 rounded-2xl text-white font-bold uppercase tracking-widest text-xs shadow-glow-primary hover:brightness-110 active:scale-95 transition-all"
               >
                 Execute with AgentOS <ArrowRight className="h-4 w-4" />
@@ -155,10 +157,10 @@ function Dashboard() {
       {/* 3. METRICS ROW */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
          {[
-            { label: 'Monthly Earnings', val: '₹6,97,000', icon: DollarSign, color: 'text-primary', trend: '+24%', trendColor: 'text-success' },
-            { label: 'Active Clients', val: '0', icon: Users, color: 'text-blue-400', trend: '+2', trendColor: 'text-success' },
-            { label: 'Pending Actions', val: '0', icon: Zap, color: 'text-yellow-500', trend: 'now', trendColor: 'text-primary' },
-            { label: 'Profit Projected', val: '₹45,000', icon: TrendingUp, color: 'text-purple-400', trend: 'Growth', trendColor: 'text-success' },
+            { label: 'Monthly Earnings', val: stats?.totalRevenue || '₹0', icon: DollarSign, color: 'text-primary', trend: '+24%', trendColor: 'text-success' },
+            { label: 'Active Clients', val: stats?.activeClients || '0', icon: Users, color: 'text-blue-400', trend: (stats?.activeClients > 0 ? `+${stats.activeClients}` : '0'), trendColor: 'text-success' },
+            { label: 'Pending Actions', val: stats?.pendingActions || '0', icon: Zap, color: 'text-yellow-500', trend: 'now', trendColor: 'text-primary' },
+            { label: 'Profit Projected', val: stats?.projectedProfit || '₹0', icon: TrendingUp, color: 'text-purple-400', trend: 'Growth', trendColor: 'text-success' },
          ].map((m, i) => (
             <motion.div 
                initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.1 }}
@@ -185,11 +187,11 @@ function Dashboard() {
                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">System Activity Logs</h3>
               </div>
               <div className="glass-strong rounded-[2rem] p-4 divide-y divide-white/5 border border-white/10">
-                 {[
+                 {(stats?.agentLogs || [
                     { text: 'Found 3 new high-value opportunities', tag: 'LEAD SCOUT', time: '2m ago' },
                     { text: 'React + AI demand up 14% in Mumbai', tag: 'TREND RADER', time: '15m ago' },
                     { text: 'Drafted proposal for Fintech Startup', tag: 'OPS AGENT', time: '1h ago' }
-                 ].map((log, i) => (
+                 ]).map((log: any, i: number) => (
                     <div key={i} className="py-4 px-4 flex items-center justify-between group hover:bg-white/5 rounded-xl transition-all">
                        <div className="flex items-center gap-4">
                           <div className="h-2 w-2 rounded-full bg-primary" />
@@ -211,10 +213,10 @@ function Dashboard() {
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                  {[
-                    { name: 'Ops Agent', desc: 'Drafts proposals, manages invoices and executes contracts.', status: 'ACTIVE', icon: Briefcase, color: 'bg-blue-500/20 text-blue-400' },
-                    { name: 'Lead Scout', desc: 'Discovers high-value opportunities and matches you with global demand.', status: 'SCANNING...', icon: Radar, color: 'bg-cool/20 text-cool' },
-                    { name: 'Trend Radar', desc: 'Detects market shifts and surfaces early-stage profit opportunities.', status: 'MONITORING', icon: Target, color: 'bg-orange-500/20 text-orange-400' },
-                    { name: 'Comms Agent', desc: 'Automates follow-ups, drafts replies, and tunes your professional tone.', status: 'READY', icon: MessageSquare, color: 'bg-purple-500/20 text-purple-400' }
+                    { name: 'Ops Agent', desc: 'Drafts proposals, manages invoices and executes contracts.', status: 'ACTIVE', icon: Briefcase, color: 'bg-blue-500/20 text-blue-400', to: '/sanskar/proposals' },
+                    { name: 'Lead Scout', desc: 'Discovers high-value opportunities and matches you with global demand.', status: 'SCANNING...', icon: Radar, color: 'bg-cool/20 text-cool', to: '/sanskar/opportunities' },
+                    { name: 'Trend Radar', desc: 'Detects market shifts and surfaces early-stage profit opportunities.', status: 'MONITORING', icon: Target, color: 'bg-orange-500/20 text-orange-400', to: '/sanskar/insights' },
+                    { name: 'Comms Agent', desc: 'Automates follow-ups, drafts replies, and tunes your professional tone.', status: 'READY', icon: MessageSquare, color: 'bg-purple-500/20 text-purple-400', to: '/sanskar/chatbot' }
                  ].map((agent, i) => (
                     <div key={i} className="glass-strong rounded-[2.5rem] p-8 border border-white/10 relative overflow-hidden group">
                        <div className="flex justify-between items-start mb-6">
@@ -225,7 +227,10 @@ function Dashboard() {
                        </div>
                        <h4 className="text-xl font-bold mb-2 text-white">{agent.name}</h4>
                        <p className="text-xs text-muted-foreground font-medium mb-8 leading-relaxed">{agent.desc}</p>
-                       <button className="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-3 transition-all">
+                       <button 
+                        onClick={() => navigate({ to: agent.to as any })}
+                        className="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-3 transition-all"
+                       >
                           Initialize Protocol <ArrowUpRight className="h-4 w-4" />
                        </button>
                     </div>
@@ -244,7 +249,10 @@ function Dashboard() {
 
               <div className="space-y-6">
                  {matches.slice(0, 3).map((job, i) => (
-                    <div key={i} className="space-y-2 group cursor-pointer">
+                    <div key={i} 
+                      onClick={() => navigate({ to: '/sanskar/opportunities' })}
+                      className="space-y-2 group cursor-pointer"
+                    >
                        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-primary underline decoration-primary/20">
                           <span>{job.score || 95}% Match</span>
                           <span className="text-white">{job.rate}</span>
@@ -264,7 +272,10 @@ function Dashboard() {
                        "Increase your hourly pricing by 18% based on recent market shifts in AI Product Design."
                     </p>
                  </div>
-                 <button className="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all">
+                 <button 
+                  onClick={() => navigate({ to: '/sanskar/opportunities' })}
+                  className="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all"
+                 >
                     Scan Global Market
                  </button>
               </div>

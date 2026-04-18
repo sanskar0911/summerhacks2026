@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
@@ -20,6 +21,11 @@ import { Route as SanskarInsightsRouteImport } from './routes/sanskar/insights'
 import { Route as SanskarClientsRouteImport } from './routes/sanskar/clients'
 import { Route as SanskarChatbotRouteImport } from './routes/sanskar/chatbot'
 
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/projects': typeof ProjectsRoute
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/projects': typeof ProjectsRoute
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/projects': typeof ProjectsRoute
   '/sanskar/chatbot': typeof SanskarChatbotRoute
   '/sanskar/clients': typeof SanskarClientsRoute
   '/sanskar/insights': typeof SanskarInsightsRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/login'
     | '/onboarding'
+    | '/projects'
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/login'
     | '/onboarding'
+    | '/projects'
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/login'
     | '/onboarding'
+    | '/projects'
     | '/sanskar/chatbot'
     | '/sanskar/clients'
     | '/sanskar/insights'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
+  ProjectsRoute: typeof ProjectsRoute
   SanskarChatbotRoute: typeof SanskarChatbotRoute
   SanskarClientsRoute: typeof SanskarClientsRoute
   SanskarInsightsRoute: typeof SanskarInsightsRoute
@@ -162,6 +175,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
+  ProjectsRoute: ProjectsRoute,
   SanskarChatbotRoute: SanskarChatbotRoute,
   SanskarClientsRoute: SanskarClientsRoute,
   SanskarInsightsRoute: SanskarInsightsRoute,

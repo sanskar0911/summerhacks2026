@@ -4,9 +4,8 @@ import { PageHeader } from "../../components/PageHeader";
 import { useState, useEffect } from "react";
 import api from "../../lib/api";
 import { motion, AnimatePresence } from "framer-motion";
-import axios from 'axios';
+// Using centralized API configuration from lib/api
 
-const API_URL = 'http://localhost:5000/api';
 
 export const Route = createFileRoute("/sanskar/insights")({
   head: () => ({
@@ -110,7 +109,7 @@ function Insights() {
     setLoadingMessage("Initializing Neural Engine...");
 
     try {
-      const response = await axios.post(`${API_URL}/audit`, 
+      const response = await api.post("/audit", 
         { code: fileContent },
         { timeout: 60000 }
       );

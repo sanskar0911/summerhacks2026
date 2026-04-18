@@ -6,16 +6,18 @@ import {
   Users,
   FileText,
   TrendingUp,
+  FolderKanban,
   Menu,
   X,
   Bell,
   Cpu,
-  Award
+  Award,
+  LogOut,
+  ImageIcon
 } from "lucide-react";
 import { BrainOrb } from "./BrainOrb";
 import { TypingDots } from "./TypingDots";
 import { useAuth } from "../lib/auth";
-import { LogOut } from "lucide-react";
 
 const nav = [
   { to: "/sanskar", label: "Dashboard", icon: LayoutDashboard },
@@ -65,7 +67,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          <nav className="mt-6 flex flex-col gap-1">
+          <nav className="mt-7 flex flex-col gap-1.5">
             {nav.map((item) => {
               const Icon = item.icon;
               const active = pathname === item.to || (item.to !== "/sanskar" && pathname.startsWith(item.to));
@@ -74,13 +76,13 @@ export function AppShell({ children }: { children: ReactNode }) {
                   key={item.to}
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all
+                  className={`group flex items-center gap-3 rounded-lg px-3 py-3 text-base transition-all
                     ${active
                       ? "bg-white/10 text-foreground shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                     }`}
                 >
-                  <Icon className={`h-4 w-4 ${active ? "text-primary" : ""}`} />
+                  <Icon className={`h-[18px] w-[18px] ${active ? "text-primary" : ""}`} />
                   <span className="font-medium">{item.label}</span>
                   {active && (
                     <span className="ml-auto h-1.5 w-1.5 rounded-full bg-primary animate-glow-pulse" />
@@ -90,11 +92,31 @@ export function AppShell({ children }: { children: ReactNode }) {
             })}
           </nav>
 
+          <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-3">
+            <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">Toolbox</p>
+            <div className="mt-3 flex flex-col gap-2">
+              <Link 
+                to="/sanskar/opportunities"
+                className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-white/10 transition-colors w-full text-left"
+              >
+                <Sparkles className="h-4 w-4 text-primary" />
+                Run Agent
+              </Link>
+              <Link 
+                to="/sanskar/insights"
+                className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm hover:bg-white/10 transition-colors w-full text-left"
+              >
+                <ImageIcon className="h-4 w-4 text-brand-cyan" />
+                Insights
+              </Link>
+            </div>
+          </div>
+
           <button
             onClick={logout}
-            className="mt-auto group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+            className="mt-auto group flex items-center gap-3 rounded-lg px-3 py-3 text-base text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
           >
-            <LogOut className="h-4 w-4" />
+            <LogOut className="h-[18px] w-[18px]" />
             <span className="font-medium">Logout</span>
           </button>
         </div>
@@ -111,7 +133,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {/* Main */}
       <div className="flex-1 min-w-0 flex flex-col">
         <header className="sticky top-0 z-20 glass border-b border-border/60">
-          <div className="flex items-center gap-3 px-4 lg:px-8 h-16">
+          <div className="flex items-center gap-3 px-4 lg:px-8 h-18">
             <button
               onClick={() => setOpen((v) => !v)}
               className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg hover:bg-white/5"
@@ -142,13 +164,13 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <div className="h-7 w-7 rounded-full bg-gradient-primary grid place-items-center text-[10px] font-semibold text-primary-foreground group-hover:scale-105 transition-transform">
                   {userInitials}
                 </div>
-                <span className="hidden sm:inline text-xs font-medium">{user?.name}</span>
+                <span className="hidden sm:inline text-sm font-medium">{user?.name}</span>
               </div>
             </div>
           </div>
         </header>
 
-        <main className="flex-1 px-4 lg:px-8 py-6 lg:py-10 max-w-[1400px] w-full mx-auto animate-fade-up">
+        <main className="flex-1 px-4 lg:px-8 py-6 lg:py-10 max-w-[1540px] w-full mx-auto animate-fade-up">
           {children}
         </main>
       </div>
