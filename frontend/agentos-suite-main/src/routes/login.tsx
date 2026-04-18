@@ -53,21 +53,23 @@ function LoginComponent() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 bg-[#030303] relative overflow-hidden">
-      <div className="absolute top-0 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-0 -right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px] animate-pulse delay-700" />
+    <div className="min-h-screen bg-[#030303] flex items-center justify-center p-4 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary z-50" />
       
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-md relative z-10"
-      >
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-[2rem] bg-gradient-primary mb-6 shadow-glow-primary">
-            <Sparkles className="h-10 w-10 text-white" />
+      {/* Background Orbs */}
+      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/10 blur-[120px] rounded-full animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-cool/5 blur-[100px] rounded-full" />
+
+      <main className="w-full max-w-md space-y-8 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <div className="text-center space-y-4">
+          <div className="inline-flex h-16 w-16 items-center justify-center rounded-[2rem] bg-gradient-primary shadow-glow-primary scale-110 mb-4">
+            <Sparkles className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-4xl font-black tracking-tight text-white mb-2 italic">JobMatch <span className="text-primary tracking-tighter not-italic">AI</span></h1>
-          <p className="text-muted-foreground font-medium uppercase tracking-widest text-[10px]">Autonomous Opportunity Matching</p>
+          <h1 className="text-4xl font-black tracking-tight text-white mb-2">Agent<span className="text-primary tracking-tighter">OS</span></h1>
+          <p className="text-muted-foreground font-medium text-lg leading-relaxed">
+            Autonomous Recruitment Intelligence <br /> 
+            <span className="text-[10px] uppercase tracking-[0.2em] font-black opacity-50">Global Nexus Access</span>
+          </p>
         </div>
 
         <div className="glass-strong rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl">
@@ -166,7 +168,7 @@ function LoginComponent() {
             <span className="text-[10px] uppercase font-bold tracking-widest group-hover:tracking-[0.15em] transition-all">Sign in with Google</span>
           </button>
         </div>
-      </motion.div>
+      </main>
     </div>
   );
 }

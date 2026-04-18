@@ -21,6 +21,7 @@ const nav = [
   { to: "/sanskar", label: "Dashboard", icon: LayoutDashboard },
   { to: "/sanskar/opportunities", label: "Opportunities", icon: Sparkles },
   { to: "/sanskar/leaderboard", label: "Leaderboard", icon: Award },
+  { to: "/sanskar/insights", label: "Market Insights", icon: TrendingUp },
   { to: "/sanskar/clients", label: "Partners", icon: Users },
   { to: "/sanskar/proposals", label: "Proposals", icon: FileText },
   { to: "/sanskar/chatbot", label: "Career Oracle", icon: Cpu },
@@ -57,7 +58,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <Sparkles className="h-full w-full text-white" />
             </div>
             <div className="leading-tight">
-              <div className="text-sm font-black tracking-tight text-white uppercase italic">JobMatch <span className="text-primary not-italic tracking-tighter">AI</span></div>
+               <div className="text-sm font-black tracking-tight text-white uppercase text-gradient-primary">AgentOS</div>
               <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground font-black opacity-50">
                 Nexus v1.0
               </div>

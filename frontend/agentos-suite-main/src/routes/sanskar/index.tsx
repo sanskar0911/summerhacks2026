@@ -29,7 +29,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export const Route = createFileRoute("/sanskar/")({
   head: () => ({
     meta: [
-      { title: "Dashboard · JobMatch AI" },
+      { title: "Dashboard · AgentOS" },
       {
         name: "description",
         content: "Autonomous Job Matching Platform - AI-driven career growth.",
